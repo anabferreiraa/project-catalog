@@ -1,5 +1,6 @@
 <script>
-	import Header from "$lib/Sections/Header/Header.svelte";
+	import AnnouncementBar from "$lib/Components/AnnouncementBar/AnnouncementBar.svelte";
+	
 
 </script>
-<Header/>
+<AnnouncementBar messages = {['frete gratis pra todo o Brasil' , '10% off no pix']} />
