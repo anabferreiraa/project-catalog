@@ -8,3 +8,6 @@ content:
       - name: AnnouncementBar
         label: 'Barra de anúncio'
         type: string
+        list: true
+      
+      
