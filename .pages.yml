@@ -1,0 +1,10 @@
+content:
+  - name: AnnouncementBar
+    label: 'Barra de anúncio'
+    type: file
+    path: 'src/cms/announcement-bar.json'
+    format: 'json'
+    fields: 
+      - name: AnnouncementBar
+        label: 'Barra de anúncio'
+        type: string
