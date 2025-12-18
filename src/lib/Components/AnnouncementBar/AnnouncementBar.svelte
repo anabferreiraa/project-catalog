@@ -1,4 +1,6 @@
 <script lang="ts">
+	import IconeAmouncementBar from "../Icons/IconeAmouncementBar.svelte";
+
 	interface Props {
 		messages: string[];
 		speed?: number;
@@ -16,7 +18,7 @@
             {#each repeatedMessages as message, index}
                 <span class="inline-flex items-center gap-5">{message} 
                     {#if index !== repeatedMessages.length - 1}
-                        <span class="w-1 h-1 bg-amber-100 rounded-full"></span>
+                        <IconeAmouncementBar/>
                     {/if}
                 </span>
 
