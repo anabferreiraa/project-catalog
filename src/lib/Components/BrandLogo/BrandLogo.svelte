@@ -11,9 +11,9 @@
 
 	let {
 		images = {
-			dir: '/image/brandlogo/',
-			name: 'OUSADA',
-			alt: 'logo escrito ousada em azul escuro'
+			dir: '/image/brand/',
+			name: 'logoipsum',
+			alt: 'logo marca da loja'
 		}
 	}: Props = $props();
 </script>

@@ -38,5 +38,9 @@
 		"typescript-eslint": "^8.48.1",
 		"vite": "^7.2.6",
 		"wrangler": "^4.56.0"
+	},
+	"dependencies": {
+		"embla-carousel-autoplay": "^8.6.0",
+		"embla-carousel-svelte": "^8.6.0"
 	}
 }

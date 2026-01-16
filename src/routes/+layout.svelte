@@ -11,7 +11,7 @@
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 <AnnouncementBar messages = { AnnouncementData.AnnouncementBar } />
 
-<BrandLogo/>
+<BrandLogo   />
 
 
 {@render children()}
