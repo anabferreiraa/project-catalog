@@ -11,7 +11,7 @@
 
 	let {
 		images = {
-			dir: '/image/brand/',
+			dir: '/images/brand/',
 			name: 'logoipsum',
 			alt: 'logo marca da loja'
 		}

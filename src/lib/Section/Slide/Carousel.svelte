@@ -11,13 +11,13 @@
 <div class="embla" use:emblaCarouselSvelte="{{ options, plugins }}">
   <div class="embla__container">
     <div class="embla__slide">
-     <img src="/image/slide/banner-2.webp" alt="">
+     <img src="/images/slide/banner-2.webp" alt="">
     </div>
     <div class="embla__slide">
-     <img src="/image/slide/banner.webp" alt="">
+     <img src="/images/slide/banner.webp" alt="">
     </div>
     <div class="embla__slide">
-     <img src="/image/slide/banner-2.webp" alt="">
+     <img src="/images/slide/banner-2.webp" alt="">
     </div>
   </div>
 </div>
