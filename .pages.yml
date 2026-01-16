@@ -17,12 +17,13 @@ content:
     path: 'src/cms/general-configuration.json'
     format: 'json'
     fields: 
-      - name: contact
-        label: Contact information
+      - name: companyInformation
+        label: 'Informações da empresa'
         type: object
         fields:
-          - name: first_name
-            label: First name
+          - name: companyName
+            label: 'Nome da empresa'
             type: string
+          
          
       
