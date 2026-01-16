@@ -1,16 +1,16 @@
 content:
-  - name: AnnouncementBar
+  - name: announcementBar
     label: 'Barra de anúncio'
     type: file
     path: 'src/cms/announcement-bar.json'
     format: 'json'
     fields: 
-      - name: AnnouncementBar
+      - name: announcementBar
         label: 'Barra de anúncio'
         list: true
         type: string
-  - name: BrandLogo
-    label: 'Logo'
+  - name: generalConfiguration
+    label: 'Configuração Geal'
     type: file
     path: 'src/cms/brand-logo.json'
     format: 'json'
