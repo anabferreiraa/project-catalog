@@ -9,13 +9,28 @@ content:
         label: 'Barra de anúncio'
         list: true
         type: string
+
+        # é um comentario
   - name: generalConfiguration
     label: 'Configuração Geral'
     type: file
     path: 'src/cms/general-configuration.json'
     format: 'json'
     fields: 
-      - name: text
-        label: 'texto simples'
-        type: string
+      - name: contact
+        label: Contact information
+        type: object
+        fields:
+          - name: first_name
+            label: First name
+            type: string
+          - name: last_name
+            label: Last name
+            type: string
+          - name: email
+            label: Email address
+            type: string
+          - name: phone
+            label: Phone number
+            type: string
       
