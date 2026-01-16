@@ -25,8 +25,6 @@
             {/each}
         </div>
         {/each}
-        
-       
     </div>
 </section>
 <style>

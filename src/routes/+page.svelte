@@ -1,6 +1,5 @@
 <script>
-	import AnnouncementBar from "$lib/Components/AnnouncementBar/AnnouncementBar.svelte";
-	import cms from '$src/cms/announcement-bar.json'
-
+	import Carousel from "$lib/Section/Slide/Carousel.svelte";
 </script>
-<AnnouncementBar messages={AnnouncementBar}/>
+<Carousel/>
+
