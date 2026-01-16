@@ -30,6 +30,7 @@ content:
         fields:
           - name: companyName
             label: 'Nome da empresa'
+            required: true
             type: string
           - name: companyBrand
             label: 'logo da empresa'
