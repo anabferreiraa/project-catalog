@@ -1,6 +1,5 @@
 <script lang="ts">
 	interface Images {
-		dir: string;
 		name: string;
 		alt: string;
 	}
@@ -11,7 +10,6 @@
 
 	let {
 		images = {
-			dir: '/images/brand/',
 			name: 'logoipsum',
 			alt: 'logo marca da loja'
 		}
@@ -20,6 +18,6 @@
 
 <section>
     <div class="w-full flex justify-center p-8">
-         <img src="{images.dir + images.name}.webp" alt={images.alt}>
+         <img src="{images.name}" alt={images.alt}>
     </div>
 </section>
