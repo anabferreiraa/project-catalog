@@ -10,7 +10,7 @@ content:
         list: true
         type: string
   - name: generalConfiguration
-    label: 'Configuração Geal'
+    label: 'Configuração Geral'
     type: file
     path: 'src/cms/brand-logo.json'
     format: 'json'
