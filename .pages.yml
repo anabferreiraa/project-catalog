@@ -33,6 +33,7 @@ content:
             type: string
           - name: companyBrand
             label: 'logo da empresa'
+            description: 'Envie imagem somente em formato de Webp'
             type: image
             options:
              media: brand
