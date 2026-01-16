@@ -12,7 +12,7 @@ content:
   - name: generalConfiguration
     label: 'Configuração Geral'
     type: file
-    path: 'src/cms/brand-logo.json'
+    path: 'src/cms/general-configuration.json'
     format: 'json'
     fields: 
       - name: text
