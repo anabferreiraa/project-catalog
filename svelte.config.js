@@ -8,9 +8,10 @@ const config = {
 	// for more information about preprocessors
 	preprocess: vitePreprocess(),
 
-	kit: { adapter: adapter() , alias: {
-            $cms: fileURLToPath(new URL('./src/cms', import.meta.url))
-        } }
+	kit: {
+		adapter: adapter(),
+		alias: { $cms: fileURLToPath(new URL('./src/cms', import.meta.url)) }
+	}
 };
 
 export default config;
