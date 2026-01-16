@@ -24,13 +24,5 @@ content:
           - name: first_name
             label: First name
             type: string
-          - name: last_name
-            label: Last name
-            type: string
-          - name: email
-            label: Email address
-            type: string
-          - name: phone
-            label: Phone number
-            type: string
+         
       
