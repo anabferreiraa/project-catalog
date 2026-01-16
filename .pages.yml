@@ -7,7 +7,15 @@ content:
     fields: 
       - name: AnnouncementBar
         label: 'Barra de anúncio'
-        type: string
         list: true
-      
+        type: string
+  - name: BrandLogo
+    label: 'Logo'
+    type: file
+    path: 'src/cms/brand-logo.json'
+    format: 'json'
+    fields: 
+      - name: text
+        label: 'texto simples'
+        type: string
       
