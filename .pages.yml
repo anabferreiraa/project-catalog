@@ -24,6 +24,8 @@ content:
           - name: companyName
             label: 'Nome da empresa'
             type: string
-          
+          - name: companyBrand
+            label: 'logo dad empresa'
+            type: image
          
       
