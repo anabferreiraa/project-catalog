@@ -2,7 +2,7 @@ media:
  - name: brand
    label: 'Pasta de logo'
    input: static/images/brand
-   output: /imagens/brand
+   output: /images/brand
    extensions: [ webp ]
 
 content:
