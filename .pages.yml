@@ -1,3 +1,10 @@
+media:
+ - name: brand
+   label: 'Pasta de logo'
+   input: static/images/brand
+   output: /imagens/brand
+   extensions: [ webp ]
+
 content:
   - name: announcementBar
     label: 'Barra de anúncio'
@@ -27,5 +34,7 @@ content:
           - name: companyBrand
             label: 'logo da empresa'
             type: image
+            options:
+             media: brand
          
       
