@@ -41,6 +41,7 @@
 	},
 	"dependencies": {
 		"embla-carousel-autoplay": "^8.6.0",
+		"embla-carousel-fade": "^8.6.0",
 		"embla-carousel-svelte": "^8.6.0"
 	}
 }

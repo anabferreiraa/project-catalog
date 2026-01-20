@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
-<AnnouncementBar messages = { AnnouncementData.AnnouncementBar } />
+<AnnouncementBar messages = { AnnouncementData.announcementBar } />
 <BrandBar images = {{ name: GeneralConfigurationData.companyInformation.companyBrand, alt:`Logo marca da empresa ${GeneralConfigurationData.companyInformation.companyName}` }}/>
 
 {@render children()}
