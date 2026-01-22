@@ -45,13 +45,13 @@ content:
             options:
              media: brand
          
-  - name: banners
+  - name: bannersz
     label: 'Banners'
     type: file
     path: 'src/cms/banners.json'
     format: 'json'
     fields:
-     - name: banners
+     - name: bannersx
        label: 'Selecione a imagem'
        type: object
        list: true
