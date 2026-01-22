@@ -17,12 +17,12 @@
 	let {
 		images = [
 			{
-				name: '/images/slide/banner-2.webp',
+				name: '/images/banners/banner-2.webp',
 				alt: 'imagem de slide',
 				link: ''
 			},
 			{
-				name: '/images/slide/banner.webp',
+				name: '/images/banners/banner.webp',
 				alt: 'imagem de slide',
 				link: ''
 			}
