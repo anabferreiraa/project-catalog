@@ -60,13 +60,11 @@ content:
           label: 'Link de redirecionamento'
           description: 'Ex: https://www.google.com'
           type: string
-          required: false
         - name: blank
           label: 'Abrir em nova aba?'
           description: 'se ativo, abre o link em nova aba'
           type: boolean
           default: false
-          required: false
         - name: desktopImage
           label: 'Imagem para Desktop'
           type: object
@@ -75,11 +73,9 @@ content:
               label: 'Selecione a imagem'
               description: 'Tamanho recomendado 3072x900 em .jpg, .jpeg, .webp ou .avif'
               type: image
-              required: false
               options:
                 media: banners
             - name: alt
               label: 'Descrição do Banner'
               description: 'Forneça um texto alternativo que descreva o conteúdo da imagem'
               type: string
-              required: false
