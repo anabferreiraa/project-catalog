@@ -53,12 +53,10 @@ content:
     fields: 
      - name: imagesSlides
        label: 'imagens'
-       list: true
        type: object
+       list: true
        fields:
          - name: images
            label: 'Imagem do slide'
-           type: image
-           options:
-            media: slide
+           type: string
          
