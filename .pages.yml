@@ -51,6 +51,35 @@ content:
     path: 'src/cms/banners.json'
     format: 'json'
     fields:
-     - name: teste
-       label: 'tests'
-       type: string
+     - name: banners
+       label: 'Selecione a imagem'
+       type: object
+       list: true
+       fields:
+        - name: link
+          label: 'Link de redirecionamento'
+          description: 'Ex: https://www.google.com'
+          type: string
+          required: false
+        - name: blank
+          label: 'Abrir em nova aba?'
+          description: 'se ativo, abre o link em nova aba'
+          type: boolean
+          default: false
+          required: false
+        - name: desktopImage
+          label: 'Imagem para Desktop'
+          type: object
+          fields:
+            - name: src
+              label: 'Selecione a imagem'
+              description: 'Tamanho recomendado 3072x900 em .jpg, .jpeg, .webp ou .avif'
+              type: image
+              required: true
+              options:
+               media: slide
+            - name: alt
+              label: 'Descrição do Banner'
+              description: 'Forneça um texto alternativo que descreva o conteúdo da imagem'
+              type: string
+              required: true
