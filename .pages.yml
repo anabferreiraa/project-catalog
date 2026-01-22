@@ -9,6 +9,7 @@ media:
    input: static/images/slide
    output: /images/slide
    extensions: [ webp ]
+   
 content:
   - name: announcementBar
     label: 'Barra de anúncio'
