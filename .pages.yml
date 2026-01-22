@@ -54,7 +54,6 @@ content:
      - name: bannersx
        label: 'Selecione a imagem'
        type: object
-       list: true
        fields:
         - name: link
           label: 'Link de redirecionamento'
