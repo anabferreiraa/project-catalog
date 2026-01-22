@@ -50,8 +50,9 @@ content:
     path: 'src/cms/slide-carousel.json'
     format: 'json'
     fields: 
-     - name: slidesImagens
-       label: 'Imagens'
+     - name: slides
+       label: 'Slides'
+       required: true
        list: true
        type: object
        fields:
