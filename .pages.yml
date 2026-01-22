@@ -46,7 +46,7 @@ content:
              media: brand
          
   - name: slideCarousel
-    label: 'Slide carrossel'
+    label: 'Banner'
     type: file
     path: 'src/cms/slide-carousel.json'
     format: 'json'
