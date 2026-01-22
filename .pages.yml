@@ -53,6 +53,7 @@ content:
     fields:
      - name: bannersx
        label: 'Selecione a imagem'
+       list: true
        type: object
        fields:
         - name: link
@@ -74,11 +75,11 @@ content:
               label: 'Selecione a imagem'
               description: 'Tamanho recomendado 3072x900 em .jpg, .jpeg, .webp ou .avif'
               type: image
-              required: true
+              required: false
               options:
                 media: banners
             - name: alt
               label: 'Descrição do Banner'
               description: 'Forneça um texto alternativo que descreva o conteúdo da imagem'
               type: string
-              required: true
+              required: false
