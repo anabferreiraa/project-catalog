@@ -54,12 +54,12 @@ content:
         list: true
         type: string
         fields:
-         - name: companyInformation
-           label: 'Informações da empresa'
+         - name: slideImages
+           label: 'imagens para carrossel'
            type: object
            fields:
-           - name: slide
-             label: 'slide de carrossel'
+           - name: imagens
+             label: 'imagens para carrossel'
              description: 'Envie imagem somente em formato de Webp'
              type: image
              options:
