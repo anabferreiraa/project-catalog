@@ -4,7 +4,11 @@ media:
    input: static/images/brand
    output: /images/brand
    extensions: [ webp ]
-
+ - name: slide
+   label: 'Pasta de Carrosel'
+   input: static/images/slide
+   output: /images/slide
+   extensions: [ webp ]
 content:
   - name: announcementBar
     label: 'Barra de anúncio'
