@@ -34,7 +34,7 @@
 	<div class="embla__container">
 		{#each images as { name, alt, link }}
 			<div class="embla__slide h-125 w-full bg-amber-200 lg:h-175">
-				<img class="h-full w-full" src={name} {alt} />
+				<a href="{link}"> <img class="h-full w-full" src={name} {alt} /> </a> 
 			</div>
 		{/each}
 	</div>
