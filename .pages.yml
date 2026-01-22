@@ -53,6 +53,7 @@ content:
     fields: 
      - name: banners
        label: 'Selecione a imagem'
+       required: true
        type: object
        list: true
        fields:
