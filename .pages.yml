@@ -4,6 +4,7 @@ media:
    input: static/images/brand
    output: /images/brand
    extensions: [ webp ]
+   
  - name: slide
    label: 'Pasta de Carrosel'
    input: static/images/slide
@@ -50,8 +51,8 @@ content:
     path: 'src/cms/slide-carousel.json'
     format: 'json'
     fields: 
-     - name: slides
-       label: 'Slides'
+     - name: imagesSlides
+       label: 'imagens'
        required: true
        list: true
        type: object
