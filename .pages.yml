@@ -53,7 +53,7 @@ content:
     fields: 
      - name: imagesSlides
        label: 'imagens'
-       required: true
+       required: false
        list: true
        type: object
        fields:
