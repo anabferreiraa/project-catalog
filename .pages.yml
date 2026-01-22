@@ -45,7 +45,7 @@ content:
             options:
              media: brand
          
-  - name: bannersz
+  - name: banners
     label: 'Banners'
     type: file
     path: 'src/cms/banners.json'
