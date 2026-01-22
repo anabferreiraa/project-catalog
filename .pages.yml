@@ -56,7 +56,7 @@ content:
        list: true
        type: object
        fields:
-         - name: image
+         - name: images
            label: 'Imagem do slide'
            type: image
            options:
