@@ -51,12 +51,11 @@ content:
     path: 'src/cms/slide-carousel.json'
     format: 'json'
     fields: 
-     - name: imagesSlides
-       label: 'imagens'
+     - name: banners
+       label: 'Selecione a imagem'
        type: object
        list: true
        fields:
-         - name: images
-           label: 'Imagem do slide'
-           type: string
-         
+        - name: test
+          label: 'texto de teste'
+          type: string
