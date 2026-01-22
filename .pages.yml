@@ -39,4 +39,14 @@ content:
             options:
              media: brand
          
-      
+  - name: slideCarousel
+    label: 'slide carrossel'
+    type: file
+    path: 'src/cms/slide-carousel.json'
+    format: 'json'
+    fields: 
+      - name: slideCarousel
+        label: 'slide carrossel'
+        list: true
+        type: string
+         
