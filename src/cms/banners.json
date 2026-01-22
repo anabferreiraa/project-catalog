@@ -1,0 +1,15 @@
+{
+  "banners": [
+    {
+      "blank": false,
+      "desktopImage": {
+        "src": "/images/banners/banner-2.webp",
+        "alt": "banner gostosa"
+      },
+      "mobileImage": {
+        "src": "/images/banners/banner.webp",
+        "alt": "baba"
+      }
+    }
+  ]
+}
