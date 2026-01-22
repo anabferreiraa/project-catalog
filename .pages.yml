@@ -5,10 +5,10 @@ media:
    output: /images/brand
    extensions: [ webp ]
    
- - name: slide
+ - name: banners
    label: 'Pasta de Carrosel'
-   input: static/images/slide
-   output: /images/slide
+   input: static/images/banners
+   output: /images/banners
    extensions: [ webp ]
    
 content:
@@ -77,9 +77,26 @@ content:
               type: image
               required: true
               options:
-               media: slide
+               media: banners
             - name: alt
               label: 'Descrição do Banner'
               description: 'Forneça um texto alternativo que descreva o conteúdo da imagem'
               type: string
               required: true
+        - name: mobileImage
+          label: 'Imagem para Mobile'
+          description: 'Imagens do Banner para dispositivos Mobile'
+          type: object
+          fields:
+            - name: src
+              label: 'Selecione a imagem'
+              description: 'Tamanho recomendado 750x1000 em .jpg, .jpeg, .webp ou .avif'
+              type: image
+              required: true
+              options:
+                media: banners
+            - name: alt
+              label: 'Descrição da Imagem para Mobile'
+              description: 'Forneça um texto alternativo que descreva o conteúdo da imagem'
+              type: string
+              required: true      
