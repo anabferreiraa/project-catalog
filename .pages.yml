@@ -53,4 +53,15 @@ content:
         label: 'slide carrossel'
         list: true
         type: string
+        fields:
+         - name: companyInformation
+           label: 'Informações da empresa'
+           type: object
+           fields:
+           - name: slide
+             label: 'slide de carrossel'
+             description: 'Envie imagem somente em formato de Webp'
+             type: image
+             options:
+              media: slide
          
