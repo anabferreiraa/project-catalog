@@ -50,15 +50,14 @@ content:
     path: 'src/cms/slide-carousel.json'
     format: 'json'
     fields: 
-     - name: slideCarousel
+     - name: slides
        label: 'Slides'
        list: true
        type: object
        fields:
-        - name: slideImages
-          label: 'Imagem do slide'
-          type: image
-          description: 'Envie imagem somente em formato Webp'
-          options:
+         - name: image
+           label: 'Imagem do slide'
+           type: image
+           options:
             media: slide
          
