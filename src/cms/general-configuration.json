@@ -1,5 +1,6 @@
 {
   "companyInformation": {
-    "companyName": "Nome fantasia"
+    "companyName": "Nome fantasia",
+    "companyBrand": "/images/brand/logoipsum.webp"
   }
 }
