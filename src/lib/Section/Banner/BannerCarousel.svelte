@@ -1,57 +1,99 @@
 <script lang="ts">
-	
 	import emblaCarouselSvelte from 'embla-carousel-svelte';
 	import Autoplay from 'embla-carousel-autoplay';
 	import Fade from 'embla-carousel-fade';
-    
-	let options = { loop: true, align: 'center', containScroll: false };
-	let plugins = [Autoplay(), Fade()];
 
-	interface Images {
-		name: string;
-		alt: string;
-		link: string;
+	let options = { loop: true };
+	let plugins = [Autoplay(), Fade()];
+	let emblaApi: any = $state();
+
+	// função pra navegação
+
+	function carouselPrev() {
+		if (emblaApi) emblaApi.carouselPrev;
+	}
+	function carouselNext() {
+		if (emblaApi) emblaApi.carouselNext;
+	}
+	function onInit( event: any ) {
+       emblaApi = event.detail
+	}
+
+
+
+	interface Banners {
+		link?: string;
+		blank: boolean;
+		desktopImage: {
+			src: string;
+			alt: string;
+		};
+		mobileImage: {
+			src: string;
+			alt: string;
+		};
 	}
 	interface Props {
-		images?: Images[];
+		banners?: Banners[];
 	}
+
 	let {
-		images = [
+		banners = [
 			{
-				name: 'test',
-				alt: 'test',
-				link: ''
-			},
-			{
-				name: 'test',
-				alt: 'test',
-				link: ''
+				link: '',
+				blank: false,
+				desktopImage: {
+					src: 'test',
+					alt: 'test'
+				},
+				mobileImage: {
+					src: 'test',
+					alt: 'test'
+				}
 			}
 		]
 	}: Props = $props();
 </script>
 
-<div class="embla" use:emblaCarouselSvelte={{ options, plugins }}>
-	<div class="embla__container">
-		{#each images as { name, alt, link }}
-			<div class="embla__slide h-125 w-full bg-amber-200 lg:h-175">
-				<a href="{link}"> <img class="h-full w-full" src={name} {alt} /> </a> 
+<section class=" bg-amber-200 w-full h-auto">
+    <div class="embla">
+     <div class="embla__viewport" emblainit={onInit} use:emblaCarouselSvelte={{ options, plugins }}>
+        <div class="embla__container">
+           {#each banners as {link, blank, desktopImage , mobileImage } }
+			<div class="embla__slide">
+                {#if link != ''}
+					<a href={link} target={blank ? '_blank' : '_self' } >
+					
+					<img class="w-full h-auto hidden lg:block " src={desktopImage.src} alt={desktopImage.alt}> 
+					<img class="w-full h-auto lg:hidden  " src={mobileImage.src} alt={mobileImage.alt}> 
+					</a>
+					{:else}
+
+					<img class="w-full h-auto hidden lg:block " src={desktopImage.src} alt={desktopImage.alt}> 
+					<img class="w-full h-auto lg:hidden  " src={mobileImage.src} alt={mobileImage.alt}>
+				{/if}
 			</div>
-		{/each}
+		   {/each}
+		</div>
+	 </div>
 	</div>
-</div>
- <div class="embla__controls">
-        <div class="embla__dots"></div>
-      </div>
+</section>
+
 <style>
-	.embla {
+	.embla{
+		position: relative;
+	}
+	.embla__viewport {
 		overflow: hidden;
 	}
-	.embla__container {
+	.embla__container{
 		display: flex;
+		gap: 0;
+		touch-action: pan-y pinch-zoom
 	}
-	.embla__slide {
+	.embla__slide{
 		flex: 0 0 100%;
-		min-width: 0;
+        min-width: 0;
+		height: 500px;
 	}
 </style>
