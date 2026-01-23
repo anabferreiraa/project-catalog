@@ -10,6 +10,18 @@
         "src": "/images/banners/banner.webp",
         "alt": "baba"
       }
+    },
+    {
+      "link": "link qualquer",
+      "blank": false,
+      "desktopImage": {
+        "src": "/images/banners/banner.webp",
+        "alt": "baba"
+      },
+      "mobileImage": {
+        "src": "/images/banners/banner-2.webp",
+        "alt": "baaaaa"
+      }
     }
   ]
 }
