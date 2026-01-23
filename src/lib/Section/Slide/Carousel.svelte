@@ -1,8 +1,9 @@
 <script lang="ts">
+	
 	import emblaCarouselSvelte from 'embla-carousel-svelte';
 	import Autoplay from 'embla-carousel-autoplay';
 	import Fade from 'embla-carousel-fade';
-
+    
 	let options = { loop: true, align: 'center', containScroll: false };
 	let plugins = [Autoplay(), Fade()];
 
@@ -17,13 +18,13 @@
 	let {
 		images = [
 			{
-				name: '/images/banners/banner-2.webp',
-				alt: 'imagem de slide',
+				name: 'test',
+				alt: 'test',
 				link: ''
 			},
 			{
-				name: '/images/banners/banner.webp',
-				alt: 'imagem de slide',
+				name: 'test',
+				alt: 'test',
 				link: ''
 			}
 		]
