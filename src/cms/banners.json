@@ -22,6 +22,17 @@
         "src": "/images/banners/banner-2.webp",
         "alt": "banner teste 2 mobile"
       }
+    },
+    {
+      "blank": false,
+      "desktopImage": {
+        "src": "/images/banners/banner-2.webp",
+        "alt": "aaaa"
+      },
+      "mobileImage": {
+        "src": "/images/banners/banner.webp",
+        "alt": "aaaaa"
+      }
     }
   ]
 }
