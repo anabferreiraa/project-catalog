@@ -1,44 +1,63 @@
 <script lang="ts">
-	import IconeAmouncementBar from "../Icons/IconeAmouncementBar.svelte";
+    import { cn } from '$lib/Utils/utils';
+    
 
-	interface Props {
-		messages: string[];
-		speed?: number;
-	}
+    interface Props {
+        active?: boolean;
+        messages?: string[];
+        speed?: number; // Duração em segundos
+        className?: string;
+    }
 
-	let { messages = ['teste', 'teste'], speed = 50 }: Props = $props();
+    let {
+        active = true,
+        messages = [
+            'Nova',
+            'Oferta por tempo limitado!',
+            'Transforme seu workflow hoje funcionalidade disponível!'
+        ],
+        speed = 20,
+        className
+    }: Props = $props();
 
-	const repeatedMessages = [...messages, ...messages, ...messages, ...messages];
+    // Repete as mensagens várias vezes para garantir cobertura em telas super largas
+    const repeatCount = 12;
+    const displayMessages = $derived(Array(repeatCount).fill(messages).flat());
 </script>
 
-<section class="relative w-full overflow-hidden uppercase bg-red-700 py-5 text-sm font-medium text-amber-100">
-	<div class="flex whitespace-nowrap ">
-        {#each Array(2)}
-            <div class="flex items-center animate-marquee gap-12 " style="animation-duration:{speed}s">
-            {#each repeatedMessages as message, index}
-                <span class="inline-flex items-center gap-5">{message} 
-                    {#if index !== repeatedMessages.length - 1}
-                        <IconeAmouncementBar/>
-                    {/if}
+{#if active}
+    <div
+        class={cn(
+            'relative flex h-10 w-full items-center overflow-hidden bg-[#941711] text-[#F6ECC9] shadow-sm',
+            className
+        )}
+    >
+        <div
+            class="animate-marquee flex items-center whitespace-nowrap"
+            style="animation-duration: {speed}s; width: max-content;"
+        >
+            {#each displayMessages as message}
+                <span class="px-10 font-mono text-sm font-semibold tracking-wider uppercase">
+                    {message}
                 </span>
-
+              <samp> x </samp>
             {/each}
         </div>
-        {/each}
     </div>
-</section>
+{/if}
+
 <style>
-    .animate-marquee{
-        animation: marquee linear infinite;
-    }
-    
     @keyframes marquee {
         0% {
             transform: translateX(0);
         }
         100% {
-            transform: translateX(-100%);
+            /* Move by exactly one full set of messages */
+            transform: translateX(calc(-100% / 12));
         }
     }
-   
+
+    .animate-marquee {
+        animation: marquee linear infinite;
+    }
 </style>
