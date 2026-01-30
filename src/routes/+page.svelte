@@ -1,5 +1,8 @@
 <script>
-	import Carousel from "$lib/Section/Slide/Carousel.svelte";
+	import bannerDate from '$cms/banners.json'
+	import BannerCarousel from '$lib/Section/Banner/BannerCarousel.svelte';
 </script>
-<Carousel/>
+
+<BannerCarousel banners = {bannerDate.banners}        />
+
 

@@ -1,13 +1,102 @@
+media:
+ - name: brand
+   label: 'Pasta de logo'
+   input: static/images/brand
+   output: /images/brand
+   extensions: [ webp ]
+   
+ - name: banners
+   label: 'Pasta de Carrosel'
+   input: static/images/banners
+   output: /images/banners
+   extensions: [ webp ]
+   
 content:
-  - name: AnnouncementBar
+  - name: announcementBar
     label: 'Barra de anúncio'
     type: file
     path: 'src/cms/announcement-bar.json'
     format: 'json'
     fields: 
-      - name: AnnouncementBar
+      - name: announcementBar
         label: 'Barra de anúncio'
-        type: string
         list: true
-      
-      
+        type: string
+
+        # é um comentario
+  - name: generalConfiguration
+    label: 'Configuração Geral'
+    type: file
+    path: 'src/cms/general-configuration.json'
+    format: 'json'
+    fields: 
+      - name: companyInformation
+        label: 'Informações da empresa'
+        type: object
+        fields:
+          - name: companyName
+            label: 'Nome da empresa'
+            required: true
+            type: string
+          - name: companyBrand
+            label: 'logo da empresa'
+            description: 'Envie imagem somente em formato de Webp'
+            type: image
+            options:
+             media: brand
+         
+  - name: banners
+    label: 'Banners'
+    type: file
+    path: 'src/cms/banners.json'
+    format: 'json'
+    fields:
+     - name: banners
+       label: 'Selecione a imagem'
+       type: object
+       list: true
+       fields:
+        - name: link
+          label: 'Link de redirecionamento'
+          description: 'Ex: https://www.google.com'
+          type: string
+          required: false
+        - name: blank
+          label: 'Abrir em nova aba?'
+          description: 'se ativo, abre o link em nova aba'
+          type: boolean
+          default: false
+          required: false
+        - name: desktopImage
+          label: 'Imagem para Desktop'
+          type: object
+          fields:
+            - name: src
+              label: 'Selecione a imagem'
+              description: 'Tamanho recomendado 3072x900 em .jpg, .jpeg, .webp ou .avif'
+              type: image
+              required: true
+              options:
+               media: banners
+            - name: alt
+              label: 'Descrição do Banner'
+              description: 'Forneça um texto alternativo que descreva o conteúdo da imagem'
+              type: string
+              required: true
+        - name: mobileImage
+          label: 'Imagem para Mobile'
+          description: 'Imagens do Banner para dispositivos Mobile'
+          type: object
+          fields:
+            - name: src
+              label: 'Selecione a imagem'
+              description: 'Tamanho recomendado 750x1000 em .jpg, .jpeg, .webp ou .avif'
+              type: image
+              required: true
+              options:
+                media: banners
+            - name: alt
+              label: 'Descrição da Imagem para Mobile'
+              description: 'Forneça um texto alternativo que descreva o conteúdo da imagem'
+              type: string
+              required: true      

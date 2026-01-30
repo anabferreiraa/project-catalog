@@ -38,5 +38,12 @@
 		"typescript-eslint": "^8.48.1",
 		"vite": "^7.2.6",
 		"wrangler": "^4.56.0"
+	},
+	"dependencies": {
+		"clsx": "^2.1.1",
+		"embla-carousel-autoplay": "^8.6.0",
+		"embla-carousel-fade": "^8.6.0",
+		"embla-carousel-svelte": "^8.6.0",
+		"tailwind-merge": "^3.4.0"
 	}
 }
