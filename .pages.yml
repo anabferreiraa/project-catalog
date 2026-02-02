@@ -49,10 +49,14 @@ content:
             type: image
             options:
              media: brand
-          - name: email
-            label: 'Email da sua empresa'
-            description: 'ex: diretoria@guilhermeferragens.com.br'
-            type: string
+          - name: social
+            label: 'redes sociais'
+            type: object
+            fields:
+              - name: email
+                label: 'Email da sua empresa'
+                description: 'ex: diretoria@guilhermeferragens.com.br'
+                type: string
          
   - name: banners
     label: 'Banners'
