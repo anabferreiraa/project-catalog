@@ -49,6 +49,10 @@ content:
             type: image
             options:
              media: brand
+          - name: cnpj
+            label: 'cnpj da sua empresa'
+            description: 'ex: 60.957.421/0001-37'
+            type: string
           - name: social
             label: 'redes sociais'
             type: object
