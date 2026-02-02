@@ -77,7 +77,30 @@ content:
               - name: youtube
                 label: 'Youtube da sua empresa'
                 type: string
-                
+          - name: adress
+            label: 'endereço da sua empresa'
+            type: object
+            fields:
+              - name: cidade
+                label: 'cidade da empresa'
+                description: 'ex: Ribeirão Preto'
+                type: string
+              - name: cep
+                label: 'cep da sua empresa'
+                description: 'ex: 14020-078'
+                type: string
+              - name: rua
+                label: 'nome da rua'
+                description: 'ex: Travessa Macau'
+                type: string
+              - name: numero
+                label: 'Numero da sua empresa'
+                description: 'ex: 275'
+                type: number
+              - name: bairo
+                label: 'nome do bairro da sua empresa'
+                description: 'ex: Vila Seixas'
+                type: string
                
         
   - name: banners
