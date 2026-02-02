@@ -57,7 +57,7 @@ content:
                 label: 'Email da sua empresa'
                 description: 'ex: diretoria@guilhermeferragens.com.br'
                 type: string
-         
+        
   - name: banners
     label: 'Banners'
     type: file
