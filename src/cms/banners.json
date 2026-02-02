@@ -7,7 +7,7 @@
         "alt": "banner teste 1 desktop"
       },
       "mobileImage": {
-        "src": "/images/banners/banner.webp",
+        "src": "/images/banners/banner-mobile.webp",
         "alt": "banner teste 1 mobile"
       }
     },
@@ -19,7 +19,7 @@
         "alt": "banner teste 2 desktop"
       },
       "mobileImage": {
-        "src": "/images/banners/banner-2.webp",
+        "src": "/images/banners/banner-mobile.webp",
         "alt": "banner teste 2 mobile"
       }
     },
@@ -30,7 +30,7 @@
         "alt": "aaaa"
       },
       "mobileImage": {
-        "src": "/images/banners/banner.webp",
+        "src": "/images/banners/banner-mobile.webp",
         "alt": "aaaaa"
       }
     }
