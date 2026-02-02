@@ -57,6 +57,28 @@ content:
                 label: 'Email da sua empresa'
                 description: 'ex: diretoria@guilhermeferragens.com.br'
                 type: string
+              - name: phone
+                label: 'telefone da sua empresa'
+                description: 'ex (16) 98345-5065'
+                type: string
+              - name: whatsapp
+                label: 'Whatsapp da sua empresa'
+                description: "ex: (16) 98345-5065"
+                type: string 
+              - name: intagram
+                label: 'Intragram da sua empresa'
+                type: string
+              - name: linkedin
+                label: 'Linkedin da sua empresa'
+                type: string
+              - name: facebook
+                label: 'facebook da sua empresa'
+                type: string
+              - name: youtube
+                label: 'Youtube da sua empresa'
+                type: string
+                
+               
         
   - name: banners
     label: 'Banners'
