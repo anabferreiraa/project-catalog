@@ -77,6 +77,9 @@ content:
               - name: youtube
                 label: 'Youtube da sua empresa'
                 type: string
+          - name: maps
+            label: 'maps'
+            type: string
           - name: adress
             label: 'endereço da sua empresa'
             type: object
