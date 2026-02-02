@@ -23,7 +23,7 @@ content:
         list: true
         type: string
 
-        # é um comentario
+        # configurações de empresa
   - name: generalConfiguration
     label: 'Configuração Geral'
     type: file
@@ -36,6 +36,11 @@ content:
         fields:
           - name: companyName
             label: 'Nome da empresa'
+            required: true
+            type: string
+          - name: descrition
+            label: 'Descrição da sua empresa'
+            description: 'ex: empresa voltada para beleza'
             required: true
             type: string
           - name: companyBrand
