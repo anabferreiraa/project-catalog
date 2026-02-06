@@ -1,36 +1,38 @@
 <script lang="ts">
 	let classH3 = 'font-bold'
+    const currentYear = new Date().getFullYear();
 
-    interface Company {
+    interface CompanyInformation {
             name: string;
             imagelogo: {
                 dir: string;
                 alt: string;
             },
-            copywriter:{
-                biography: string;
-            },
+            biography: string;
+			contacts : {
+                email?: string;
+                phone?: string;
+                whatsapp?: string;
+			},
             social: {
-                email: string;
-                phone: string;
-                whatsapp: string;
                 instagram: string;
                 linkedin:string;
                 facebook:string;
                 youtube:string;
             },
-            cnpj: string;
+            cnpj?: string;
             maps:string;
             address: {
-                cidade: string;
-                cep: string;
-                rua: string;
-                numero: number;
-                bairro:string;
+                city?: string;
+                cep?: string;
+                road?: string;
+                number?: number;
+                district?:string;
+				state?:string;
             }
 };
 interface Props {
-		company?: Company;
+		company?: CompanyInformation;
 	}
 
 const {
@@ -40,26 +42,27 @@ const {
         dir: "string",
         alt: "string",
     },
-    copywriter:{
-        biography: 'fassdad'
-    },
-    social: {
+    biography: 'fassdad',
+	contacts : {
         email: 'diretoria@guilhermeferragens.com.br',
         phone: '(16) 98345-5065',
         whatsapp: '(16) 98345-5065',
+	},
+    social: {
         instagram: 'What is Lorem Ipsum? Why do we use it',
         linkedin:'What is Lorem Ipsum? Why do we use it',
         facebook:'What is Lorem Ipsum? Why do we use it',
         youtube:'',
     },
     cnpj: '60.957.421/0001-37',
-    maps:'Lorem Ipsum',
+    maps:'',
     address: {
-        cidade: 'Ribeirão Preto',
+        city: 'Ribeirão Preto',
         cep: '14020-078',
-        rua: 'Travessa Macau',
-        numero: 275,
-        bairro: 'Vila Seixas'
+        road: 'Travessa Macau',
+        number: 275,
+        district: 'Vila Seixas',
+		state: 'RF'
     }
     }
 }:Props = $props()
@@ -67,34 +70,36 @@ const {
 </script>
 
 <section >
-	<div class="flex flex-col lg:flex-row lg:justify-center gap-7 p-6 lg:items-center">
+	<div class="flex flex-col lg:flex-row lg:justify-between gap-7 px-20 py-10 items-start ">
 		<div class="space-y-4">
-			<img src={company.imagelogo.dir} alt={company.imagelogo.alt}>
+			<div class="w-47.5 h-auto">
+              <img src={company.imagelogo.dir} alt={company.imagelogo.alt}>
+			</div>
 			<p >
-				{company.copywriter.biography}
+				{company.biography}
 			</p> 
 		</div>
-		<div class="grid grid-cols-1 space-y-4 lg:grid-cols-3 lg:space-x-10 lg:space-y-0 xl:space-x-0">
-			<div class="flex flex-col">
-				<h3 class={classH3} >Contate-nos</h3>
+			<div class="flex flex-col gap-2">
+				<h3 class={classH3} >Fale conosco</h3>
 				<a
 					target="_blank "
 			       href="mailto:{company}"
-				> {company.social.email}</a
+				> {company.contacts.email}</a
 				>
 				<a
 					target="_blank "
 					
-					href={company.social.whatsapp}>{company.social.phone}</a
+					href={company.contacts.whatsapp}>{company.contacts.phone}</a
 				>
-				<a target="_blank " href={company.maps}
+			  <!-- <a target="_blank " href={company.maps}
 					>
-					{company.address.rua + ', ' + company.address.bairro + ' '}
+					{company.address.road + ', ' + company.address.district + ' '}
 					<br />
-					{company.address.cidade + ' ' + company.address.cep}
-				</a>
+					{company.address.city + ' ' + company.address.cep}
+				</a> -->
+				<h3 class={classH3} >Horário de Atendimento</h3>
 			</div>
-			<div class="flex flex-col">
+			<div class="flex flex-col gap-2">
 				<h3 class={classH3}>Siga-nos</h3>
 				<a
 					target="_blank "
@@ -120,12 +125,24 @@ const {
 					href={company.social.youtube}> You Tube</a
 				>
 			</div>
-			<div class="flex flex-col">
+			 <div class="flex flex-col gap-2">
 				<h3 class={classH3}>Termos</h3>
 				<a href="/termos-de-uso">Termos de uso</a>
                  
-				   <!-- <a class="" href="/">Politicas de Privacidade</a> -->
-			</div>
+				    <a class="" href="/">Politicas de Privacidade</a> 
+			</div> 
+		
+	</div>
+	<div class="flex flex-col justify-center items-center py-10 gap-7">
+		<div>
+			<h3>Formas de pagamento </h3>
 		</div>
+		<div>
+      <p class=" font-extralight text-sm">
+		&copy; {currentYear} - {company.name} CNPJ: {company.cnpj}. {company.address.road + ', ' + company.address.number + ' - '  + company.address.district + ' '}
+			  {company.address.city + ' / ' + company.address.state}
+	   </p>
+		</div>
+	
 	</div>
 </section>

@@ -11,6 +11,9 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 <AnnouncementBar messages = { AnnouncementData.announcementBar } />
-<BrandBar images = {{ name: GeneralConfigurationData.companyInformation.companyBrand, alt:`Logo marca da empresa ${GeneralConfigurationData.companyInformation.companyName}` }}/>
+<BrandBar images = {{
+    name: GeneralConfigurationData.companyInformation.companyBrand.brand,
+    alt: `Logo marca da empresa ${GeneralConfigurationData.companyInformation.companyName}`
+  }}/>
 
 {@render children()}
