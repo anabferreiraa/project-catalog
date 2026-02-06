@@ -50,7 +50,7 @@ content:
             options:
              media: brand
           - name: cnpj
-            label: 'cnpj da sua empresa'
+            label: 'CNPJ'
             description: 'ex: 60.957.421/0001-37'
             type: string
           - name: social
@@ -62,7 +62,7 @@ content:
                 description: 'ex: diretoria@guilhermeferragens.com.br'
                 type: string
               - name: phone
-                label: 'telefone da sua empresa'
+                label: 'Telefone da sua empresa'
                 description: 'ex (16) 98345-5065'
                 type: string
               - name: whatsapp
@@ -76,7 +76,7 @@ content:
                 label: 'Linkedin da sua empresa'
                 type: string
               - name: facebook
-                label: 'facebook da sua empresa'
+                label: 'Facebook da sua empresa'
                 type: string
               - name: youtube
                 label: 'Youtube da sua empresa'
