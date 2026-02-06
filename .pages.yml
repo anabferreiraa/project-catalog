@@ -53,8 +53,8 @@ content:
             label: 'CNPJ'
             description: 'ex: 60.957.421/0001-37'
             type: string
-          - name: social
-            label: 'Redes Sociais'
+          - name: contacts
+            label: 'Informações de Contatos'
             type: object
             fields:
               - name: email
@@ -68,7 +68,11 @@ content:
               - name: whatsapp
                 label: 'Whatsapp da sua empresa'
                 description: "ex: (16) 98345-5065"
-                type: string 
+                type: string
+          - name: social
+            label: 'Redes Sociais'
+            type: object
+            fields:
               - name: intagram
                 label: 'Intragram da sua empresa'
                 description: 'https://www.instagram.com/......'
@@ -86,8 +90,8 @@ content:
                 description: 'https://www.youtube.com/......'
                 type: string
           - name: maps
-            label: 'maps'
-            description: 'Para colocar sua empresa no Google Maps gratuitamente, crie ou reivindique seu Perfil da Empresa no Google (antigo Google Meu Negócio) acessando business.google.com/add. Preencha dados como nome, endereço, categoria e horário, e conclua a verificação por código (via telefone, SMS ou e-mail) para que o local fique ativo. '
+            label: 'Google Maps'
+            description: 'Para colocar sua empresa no Google Maps gratuitamente, crie ou reivindique seu Perfil da Empresa no Google (antigo Google Meu Negócio) acessando business.google.com/add. Preencha dados como nome, endereço, categoria e horário, e conclua a verificação por código (via telefone, SMS ou e-mail) para que o local fique ativo.'
             type: string
           - name: adress
             label: 'endereço da sua empresa'
