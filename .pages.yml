@@ -57,6 +57,7 @@ content:
              - name: descrition
                label: 'Descriçao da imagem'
                description: 'Envie imagem somente em formato de Webp'
+               type: string
           - name: cnpj
             label: 'CNPJ'
             description: 'ex: 60.957.421/0001-37'
