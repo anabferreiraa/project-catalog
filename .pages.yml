@@ -30,7 +30,7 @@ content:
     path: 'src/cms/general-configuration.json'
     format: 'json'
     fields: 
-      - name: companyInformation
+      - name: company
         label: 'Informações da empresa'
         type: object
         fields:
