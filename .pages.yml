@@ -50,6 +50,9 @@ content:
             type: image
             options:
              media: brand
+          - name: description
+            label: 'Descriçao da imagem'
+            description: 'Envie imagem somente em formato de Webp'
           - name: cnpj
             label: 'CNPJ'
             description: 'ex: 60.957.421/0001-37'
