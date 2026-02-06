@@ -38,7 +38,7 @@ content:
             label: 'Nome da empresa'
             required: true
             type: string
-          - name: description
+          - name: descrition
             label: 'Descrição da sua empresa'
             description: 'ex: empresa voltada para beleza'
             required: true
@@ -54,7 +54,7 @@ content:
                type: image
                options:
                 media: brand
-             - name: description
+             - name: descrition
                label: 'Descriçao da imagem'
                description: 'Envie imagem somente em formato de Webp'
           - name: cnpj
