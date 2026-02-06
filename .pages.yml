@@ -46,12 +46,14 @@ content:
           - name: companyBrand
             label: 'logo da empresa'
             description: 'Envie imagem somente em formato de Webp'
+            required: true
             type: image
             options:
              media: brand
           - name: cnpj
             label: 'CNPJ'
             description: 'ex: 60.957.421/0001-37'
+            required: true
             type: string
           - name: contacts
             label: 'Informações de Contatos'
@@ -60,10 +62,12 @@ content:
               - name: email
                 label: 'Email da sua empresa'
                 description: 'ex: diretoria@guilhermeferragens.com.br'
+                required: true
                 type: string
               - name: phone
                 label: 'Telefone da sua empresa'
                 description: 'ex (16) 98345-5065'
+                required: true
                 type: string
               - name: whatsapp
                 label: 'Whatsapp da sua empresa'
@@ -100,26 +104,32 @@ content:
               - name: city
                 label: 'Cidade'
                 description: 'ex: Ribeirão Preto'
+                required: true
                 type: string
               - name: state
                 label: 'Estado'
                 description: 'ex: SP'
+                required: true
                 type: string
               - name: cep
                 label: 'CEP'
                 description: 'ex: 14020-078'
+                required: true
                 type: string
               - name: road
                 label: 'Rua'
                 description: 'ex: Travessa Macau'
+                required: true
                 type: string
               - name: number
                 label: 'Número'
                 description: 'ex: 275'
+                required: true
                 type: number
               - name: district
                 label: 'Bairro'
                 description: 'ex: Vila Seixas'
+                required: true
                 type: string
             
       # banenr     
