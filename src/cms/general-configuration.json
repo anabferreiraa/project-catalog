@@ -1,6 +1,27 @@
 {
   "companyInformation": {
-    "companyName": "Nome fantasia",
-    "companyBrand": "/images/brand/logoipsum.webp"
+    "companyName": "loren",
+    "descrition": "empresa voltada para beleza",
+    "companyBrand": "/images/brand/logoipsum.webp",
+    "cnpj": "60.957.421/0001-37",
+    "contacts": {
+      "email": "diretoria@guilhermeferragens.com.br",
+      "phone": " (16) 98345-5065",
+      "whatsapp": "(16) 98345-5065"
+    },
+    "social": {
+      "intagram": "https://www.instagram.com/......",
+      "linkedin": "https://www.linkedin.com/......",
+      "facebook": "https://www.facebook.com/......",
+      "youtube": "https://www.youtube.com/......"
+    },
+    "adress": {
+      "city": "ex: Ribeirão Preto",
+      "state": "ex: SP",
+      "cep": "ex: 14020-078",
+      "road": "ex: Travessa Macau",
+      "number": 275,
+      "district": "ex: Vila Seixas"
+    }
   }
 }
