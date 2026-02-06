@@ -38,7 +38,7 @@ content:
             label: 'Nome da empresa'
             required: true
             type: string
-          - name: descrition
+          - name: description
             label: 'Descrição da sua empresa'
             description: 'ex: empresa voltada para beleza'
             required: true
