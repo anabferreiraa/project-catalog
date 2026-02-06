@@ -45,14 +45,18 @@ content:
             type: string
           - name: companyBrand
             label: 'logo da empresa'
-            description: 'Envie imagem somente em formato de Webp'
-            required: true
-            type: image
-            options:
-             media: brand
-          - name: description
-            label: 'Descriçao da imagem'
-            description: 'Envie imagem somente em formato de Webp'
+            type: object
+            fields:
+             - name: companyBrand
+               label: 'logo da empresa'
+               description: 'Envie imagem somente em formato de Webp'
+               required: true
+               type: image
+               options:
+                media: brand
+             - name: description
+               label: 'Descriçao da imagem'
+               description: 'Envie imagem somente em formato de Webp'
           - name: cnpj
             label: 'CNPJ'
             description: 'ex: 60.957.421/0001-37'
