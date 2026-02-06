@@ -2,7 +2,10 @@
   "companyInformation": {
     "companyName": "lorem",
     "descrition": "empresa voltada para beleza",
-    "companyBrand": "/images/brand/logoipsum.webp",
+    "companyBrand": {
+      "companyBrand": "/images/brand/logoipsum.webp",
+      "description": "bla bla bla bla bla"
+    },
     "cnpj": "60.957.421/0001-37",
     "contacts": {
       "email": "diretoria@guilhermeferragens.com.br",
