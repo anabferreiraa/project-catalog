@@ -47,7 +47,7 @@ content:
             label: 'logo da empresa'
             type: object
             fields:
-             - name: companyBrand
+             - name: brand
                label: 'Sua logo'
                description: 'Envie imagem somente em formato de Webp'
                required: true
