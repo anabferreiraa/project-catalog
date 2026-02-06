@@ -54,7 +54,7 @@ content:
             description: 'ex: 60.957.421/0001-37'
             type: string
           - name: social
-            label: 'redes sociais'
+            label: 'Redes Sociais'
             type: object
             fields:
               - name: email
@@ -71,18 +71,23 @@ content:
                 type: string 
               - name: intagram
                 label: 'Intragram da sua empresa'
+                description: 'https://www.instagram.com/......'
                 type: string
               - name: linkedin
                 label: 'Linkedin da sua empresa'
+                description: 'https://www.linkedin.com/......'
                 type: string
               - name: facebook
                 label: 'Facebook da sua empresa'
+                description: 'https://www.facebook.com/......'
                 type: string
               - name: youtube
                 label: 'Youtube da sua empresa'
+                description: 'https://www.youtube.com/......'
                 type: string
           - name: maps
             label: 'maps'
+            description: 'Para colocar sua empresa no Google Maps gratuitamente, crie ou reivindique seu Perfil da Empresa no Google (antigo Google Meu Negócio) acessando business.google.com/add. Preencha dados como nome, endereço, categoria e horário, e conclua a verificação por código (via telefone, SMS ou e-mail) para que o local fique ativo. '
             type: string
           - name: adress
             label: 'endereço da sua empresa'
