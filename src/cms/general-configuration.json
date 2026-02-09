@@ -19,8 +19,8 @@
       "youtube": "https://www.youtube.com/......"
     },
     "maps": "qualquer coisa",
-    "adress": {
-      "city": " Ribeirão Preto",
+    "address": {
+      "city": "Ribeirão Preto",
       "state": "SP",
       "cep": "14020-078",
       "road": "Travessa Macau",
