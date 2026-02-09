@@ -20,13 +20,12 @@
     },
     "maps": "qualquer coisa",
     "address": {
-      "city": "Ribeirão Preto",
+      "city": " Ribeirão Preto",
       "state": "SP",
       "cep": "14020-078",
       "road": "Travessa Macau",
       "number": 275,
       "district": "Vila Seixas"
-    },
-    "openingHours": "De Segunda a Sabado das 9hrs  até 19hrs"
+    }
   }
 }

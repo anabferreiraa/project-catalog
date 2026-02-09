@@ -3,12 +3,13 @@
 	const currentYear = new Date().getFullYear();
 
 	interface CompanyInformation {
-		name: string;
-		imagelogo: {
-			dir: string;
-			alt: string;
+		companyName: string;
+		descrition: string;
+		companyBrand: {
+			brand: string;
+			descrition: string;
 		};
-		biography: string;
+		cnpj?: string;
 		contacts: {
 			email?: string;
 			phone?: string;
@@ -20,7 +21,6 @@
 			facebook: string;
 			youtube: string;
 		};
-		cnpj?: string;
 		maps: string;
 		address: {
 			city?: string;
@@ -38,12 +38,13 @@
 
 	const {
 		company = {
-			name: 'Lorenzo e Guilherme Ferragens ME',
-			imagelogo: {
-				dir: 'string',
-				alt: 'string'
+			companyName: 'Lorenzo e Guilherme Ferragens ME',
+			descrition: 'fassdad',
+			companyBrand: {
+				brand: 'string',
+				descrition: 'string'
 			},
-			biography: 'fassdad',
+			cnpj: '60.957.421/0001-37',
 			contacts: {
 				email: 'diretoria@guilhermeferragens.com.br',
 				phone: '(16) 98345-5065',
@@ -55,7 +56,6 @@
 				facebook: 'What is Lorem Ipsum? Why do we use it',
 				youtube: ''
 			},
-			cnpj: '60.957.421/0001-37',
 			maps: '',
 			address: {
 				city: 'Ribeirão Preto',
@@ -74,11 +74,11 @@
 	<div class="flex flex-col items-start gap-7 px-5 py-10 lg:flex-row lg:justify-between lg:px-20">
 		<div class="space-y-4">
 			<div class="h-auto w-47.5">
-				<img src={company.imagelogo.dir} alt={company.imagelogo.alt} />
+				<img src={company.companyBrand.brand} alt={company.companyBrand.descrition} />
 			</div>
 			<div class="max-w-sm"> 
             <p>
-				{company.biography}
+				{company.descrition}
 			</p>
 			</div>
 			
@@ -127,7 +127,7 @@
 		</div> 
 		<div>
 			<p class=" text-center text-sm font-extralight">
-				&copy; {currentYear} · {company.name} · CNPJ: {company.cnpj}. {company.address.road +
+				&copy; {currentYear} · {company.companyName} · CNPJ: {company.cnpj}. {company.address.road +
 					', ' +
 					company.address.number +
 					' - ' +
