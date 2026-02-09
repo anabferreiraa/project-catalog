@@ -139,12 +139,14 @@ content:
                 description: 'ex: Vila Seixas'
                 required: true
                 type: string
-          - name: start_time
-            label: Starts at 
-            type: date
+          - name: date
+            label: 'Horario de funcionamento'
+            type: select
             options:
-             time: true
-             format: dd-MM-yyyy HH:mm
+             fetch:
+               name: start_time
+               label: '8hrs' 
+               type: number
             
       # banenr     
   - name: banners
