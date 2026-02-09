@@ -105,7 +105,7 @@ content:
             label: 'Google Maps'
             description: 'Para colocar sua empresa no Google Maps gratuitamente, crie ou reivindique seu Perfil da Empresa no Google (antigo Google Meu Negócio) acessando business.google.com/add. Preencha dados como nome, endereço, categoria e horário, e conclua a verificação por código (via telefone, SMS ou e-mail) para que o local fique ativo.'
             type: string
-          - name: adress
+          - name: address
             label: 'Endereço da sua empresa'
             type: object
             fields:
