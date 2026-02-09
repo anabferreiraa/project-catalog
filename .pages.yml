@@ -139,8 +139,8 @@ content:
                 description: 'ex: Vila Seixas'
                 required: true
                 type: string
-          - name: tweet
-            label: Tweet
+          - name: openingHours
+            label: 'Horario de Funcionamento'
             type: text
             options:
              maxlength: 140
