@@ -139,14 +139,11 @@ content:
                 description: 'ex: Vila Seixas'
                 required: true
                 type: string
-          - name: date
-            label: 'Horario de funcionamento'
-            type: select
+          - name: tweet
+            label: Tweet
+            type: text
             options:
-             fetch:
-               name: start_time
-               label: '8hrs' 
-               type: number
+             maxlength: 140
             
       # banenr     
   - name: banners
