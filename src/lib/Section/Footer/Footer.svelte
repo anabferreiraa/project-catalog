@@ -98,7 +98,7 @@
 		</div>
 		<div class="flex flex-col gap-2">
 			<h3 class={classH3}>Horário de Atendimento</h3>
-			<p class="max-w-20">{company.openingHours}</p>
+			<p class="max-w-50">{company.openingHours}</p>
 		</div>
 		<div class="flex flex-col gap-2">
 			<h3 class={classH3}>Siga-nos</h3>
