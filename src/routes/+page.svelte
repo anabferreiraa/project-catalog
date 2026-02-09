@@ -11,14 +11,14 @@
                  biography: generalConfigurationData.companyInformation.descrition,
                  imagelogo: {
                   dir: generalConfigurationData.companyInformation.companyBrand.brand,
-                  alt: generalConfigurationData.companyInformation.companyBrand.description},
+                  alt: generalConfigurationData.companyInformation.companyBrand.descrition},
 				  contacts: {
 					email: generalConfigurationData.companyInformation.contacts.email,
 					phone: generalConfigurationData.companyInformation.contacts.phone,
 					whatsapp: generalConfigurationData.companyInformation.contacts.whatsapp
 				  },
 				  social: {
-					instagram: generalConfigurationData.companyInformation.social.intagram,
+					instagram: generalConfigurationData.companyInformation.social.instagram,
 					linkedin: generalConfigurationData.companyInformation.social.linkedin,
 					facebook: generalConfigurationData.companyInformation.social.facebook,
 					youtube: generalConfigurationData.companyInformation.social.youtube

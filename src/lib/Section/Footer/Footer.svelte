@@ -49,7 +49,7 @@ const {
         whatsapp: '(16) 98345-5065',
 	},
     social: {
-        instagram: 'What is Lorem Ipsum? Why do we use it',
+        instagram: '',
         linkedin:'What is Lorem Ipsum? Why do we use it',
         facebook:'What is Lorem Ipsum? Why do we use it',
         youtube:'',
@@ -70,7 +70,7 @@ const {
 </script>
 
 <section >
-	<div class="flex flex-col lg:flex-row lg:justify-between gap-7 px-20 py-10 items-start ">
+	<div class="flex flex-col lg:flex-row lg:justify-between gap-7 px-5 lg:px-20 py-10 items-start ">
 		<div class="space-y-4">
 			<div class="w-47.5 h-auto">
               <img src={company.imagelogo.dir} alt={company.imagelogo.alt}>
@@ -81,12 +81,12 @@ const {
 		</div>
 			<div class="flex flex-col gap-2">
 				<h3 class={classH3} >Fale conosco</h3>
-				<a
+				<a class="underline"
 					target="_blank "
 			       href="mailto:{company}"
 				> {company.contacts.email}</a
 				>
-				<a
+				<a class="underline"
 					target="_blank "
 					
 					href={company.contacts.whatsapp}>{company.contacts.phone}</a
@@ -97,49 +97,52 @@ const {
 					<br />
 					{company.address.city + ' ' + company.address.cep}
 				</a> -->
+			</div>
+			<div class="flex flex-col gap-2">
 				<h3 class={classH3} >Horário de Atendimento</h3>
 			</div>
 			<div class="flex flex-col gap-2">
 				<h3 class={classH3}>Siga-nos</h3>
-				<a
+				{#if company.social.instagram != '' }
+				  <a class="underline"
 					target="_blank "
 					
 					href={company.social.instagram}
 				>
 			 Instagram</a
-				>
-				<a
+				> {/if}
+				<a class="underline"
 					target="_blank "
 					href={company.social.linkedin}
 				>
 					Linkedin</a
 				>
-				<a
+				<a class="underline"
 					target="_blank "
 					href={company.social.facebook}
 				>
 					 Facebook</a
 				>
-				<a
+				<a class="underline"
 					target="_blank "
 					href={company.social.youtube}> You Tube</a
 				>
 			</div>
 			 <div class="flex flex-col gap-2">
 				<h3 class={classH3}>Termos</h3>
-				<a href="/termos-de-uso">Termos de uso</a>
+				<a class="underline" href="/termos-de-uso">Termos de uso</a>
                  
 				    <a class="" href="/">Politicas de Privacidade</a> 
 			</div> 
 		
 	</div>
-	<div class="flex flex-col justify-center items-center py-10 gap-7">
+	<div class="flex flex-col justify-center items-center px-5 py-10 gap-7">
 		<div>
 			<h3>Formas de pagamento </h3>
 		</div>
 		<div>
-      <p class=" font-extralight text-sm">
-		&copy; {currentYear} - {company.name} CNPJ: {company.cnpj}. {company.address.road + ', ' + company.address.number + ' - '  + company.address.district + ' '}
+      <p class=" font-extralight text-sm text-center">
+		&copy; {currentYear} ·  {company.name} ·  CNPJ: {company.cnpj}. {company.address.road + ', ' + company.address.number + ' - '  + company.address.district + ' '}
 			  {company.address.city + ' / ' + company.address.state}
 	   </p>
 		</div>
