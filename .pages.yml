@@ -85,8 +85,8 @@ content:
             label: 'Redes Sociais'
             type: object
             fields:
-              - name: intagram
-                label: 'Intragram da sua empresa'
+              - name: instagram
+                label: 'Instagram da sua empresa'
                 description: 'https://www.instagram.com/......'
                 type: string
               - name: linkedin
