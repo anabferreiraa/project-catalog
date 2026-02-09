@@ -30,6 +30,7 @@
 			district?: string;
 			state?: string;
 		};
+		openingHours: string
 	}
 	interface Props {
 		company?: CompanyInformation;
@@ -63,7 +64,8 @@
 				number: 275,
 				district: 'Vila Seixas',
 				state: 'RF'
-			}
+			},
+			openingHours: ''
 		}
 	}: Props = $props();
 </script>
@@ -74,9 +76,12 @@
 			<div class="h-auto w-47.5">
 				<img src={company.imagelogo.dir} alt={company.imagelogo.alt} />
 			</div>
-			<p>
+			<div class="max-w-sm"> 
+            <p>
 				{company.biography}
 			</p>
+			</div>
+			
 		</div>
 		<div class="flex flex-col gap-2">
 			<h3 class={classH3}>Fale conosco</h3>
@@ -93,6 +98,7 @@
 		</div>
 		<div class="flex flex-col gap-2">
 			<h3 class={classH3}>Horário de Atendimento</h3>
+			<p class="max-w-20">{company.openingHours}</p>
 		</div>
 		<div class="flex flex-col gap-2">
 			<h3 class={classH3}>Siga-nos</h3>
@@ -116,9 +122,9 @@
 		</div>
 	</div>
 	<div class="flex flex-col items-center justify-center gap-7 px-5 py-10">
-		<div>
+		 <div>
 			<h3>Formas de pagamento</h3>
-		</div>
+		</div> 
 		<div>
 			<p class=" text-center text-sm font-extralight">
 				&copy; {currentYear} · {company.name} · CNPJ: {company.cnpj}. {company.address.road +
