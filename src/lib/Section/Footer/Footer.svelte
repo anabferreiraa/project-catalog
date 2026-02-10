@@ -30,7 +30,8 @@
 			district?: string;
 			state?: string;
 		};
-		openingHours: string
+		openingHours: string;
+		paymentMethods: string[];
 	}
 	interface Props {
 		company?: CompanyInformation;
@@ -65,7 +66,8 @@
 				district: 'Vila Seixas',
 				state: 'RF'
 			},
-			openingHours: ''
+			openingHours: '',
+			paymentMethods: []
 		}
 	}: Props = $props();
 </script>
@@ -76,12 +78,11 @@
 			<div class="h-auto w-47.5">
 				<img src={company.companyBrand.brand} alt={company.companyBrand.descrition} />
 			</div>
-			<div class="max-w-sm"> 
-            <p>
-				{company.descrition}
-			</p>
+			<div class="max-w-sm">
+				<p>
+					{company.descrition}
+				</p>
 			</div>
-			
 		</div>
 		<div class="flex flex-col gap-2">
 			<h3 class={classH3}>Fale conosco</h3>
@@ -121,10 +122,18 @@
 			<a class="" href="/">Politicas de Privacidade</a>
 		</div>
 	</div>
-	<div class="flex flex-col items-center justify-center gap-7 px-5 py-10">
-		 <div>
+	<div class="flex flex-col items-center justify-center gap-7 px-5 pb-10">
+		<div class="flex flex-col items-center justify-center gap-6">
 			<h3>Formas de pagamento</h3>
-		</div> 
+			<div class="flex gap-6">
+				{#each company.paymentMethods as itens}
+					<div class=" rounded-xl border border-gray-600/40 px-3 py-1 shadow-md">
+						<p>{itens}</p>
+					</div>
+				{/each}
+			</div>
+		</div>
+
 		<div>
 			<p class=" text-center text-sm font-extralight">
 				&copy; {currentYear} · {company.companyName} · CNPJ: {company.cnpj}. {company.address.road +
