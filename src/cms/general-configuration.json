@@ -31,8 +31,7 @@
     "paymentMethods": [
       "Debito",
       "Credito",
-      "Boleto",
-      "Pix"
+      "Boleto"
     ]
   }
 }
