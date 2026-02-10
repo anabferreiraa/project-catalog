@@ -150,7 +150,7 @@ content:
             options:
              placeholder: 'Selecione'
              multiple: true
-             values: [ Debito, Credito, Boleto, Pix ]
+             values: [ Débito, Crédito, Boleto, Pix ]
             
       # banenr     
   - name: banners
