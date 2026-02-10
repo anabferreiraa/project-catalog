@@ -1,6 +1,38 @@
 {
   "companyInformation": {
-    "companyName": "Nome fantasia",
-    "companyBrand": "/images/brand/logoipsum.webp"
+    "companyName": "LogoIpsum",
+    "descrition": "A Imunehair é sinônimo de inovação e cuidado. Somos especialistas no cuidado e saúde dos cabelos, pele e unha.",
+    "companyBrand": {
+      "brand": "/images/brand/logoipsum.webp",
+      "descrition": "Envie imagem somente em formato de Webp"
+    },
+    "cnpj": "60.957.421/0001-37",
+    "contacts": {
+      "email": "diretoria@guilhermeferragens.com.br",
+      "phone": "(16) 98345-5065",
+      "whatsapp": "(16) 98345-5065"
+    },
+    "social": {
+      "instagram": "https://www.instagram.com/......",
+      "linkedin": "https://www.linkedin.com/......",
+      "facebook": "https://www.facebook.com/......",
+      "youtube": "https://www.youtube.com/......"
+    },
+    "maps": "qualquer coisa",
+    "address": {
+      "city": " Ribeirão Preto",
+      "state": "SP",
+      "cep": "14020-078",
+      "road": "Travessa Macau",
+      "number": 275,
+      "district": "Vila Seixas"
+    },
+    "openingHours": "Segunda a sexta-feira das 8h às 17h | Sábado das 9h às 12h",
+    "paymentMethods": [
+      "Débito",
+      "Crédito",
+      "Boleto",
+      "Pix"
+    ]
   }
 }

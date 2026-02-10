@@ -23,7 +23,7 @@ content:
         list: true
         type: string
 
-        # é um comentario
+        # configurações de empresa
   - name: generalConfiguration
     label: 'Configuração Geral'
     type: file
@@ -38,13 +38,121 @@ content:
             label: 'Nome da empresa'
             required: true
             type: string
+          - name: descrition
+            label: 'Descrição da sua empresa'
+            description: 'ex: empresa voltada para beleza'
+            required: true
+            type: string
           - name: companyBrand
             label: 'logo da empresa'
-            description: 'Envie imagem somente em formato de Webp'
-            type: image
+            type: object
+            fields:
+             - name: brand
+               label: 'Sua logo'
+               description: 'Envie imagem somente em formato de Webp'
+               required: true
+               type: image
+               options:
+                media: brand
+             - name: descrition
+               label: 'Descriçao da imagem'
+               description: 'Envie imagem somente em formato de Webp'
+               type: string
+          - name: cnpj
+            label: 'CNPJ'
+            description: 'ex: 60.957.421/0001-37'
+            required: true
+            type: string
+          - name: contacts
+            label: 'Informações de Contatos'
+            type: object
+            fields:
+              - name: email
+                label: 'Email da sua empresa'
+                description: 'ex: diretoria@guilhermeferragens.com.br'
+                required: true
+                type: string
+              - name: phone
+                label: 'Telefone da sua empresa'
+                description: 'ex (16) 98345-5065'
+                required: true
+                type: string
+              - name: whatsapp
+                label: 'Whatsapp da sua empresa'
+                description: "ex: (16) 98345-5065"
+                type: string
+          - name: social
+            label: 'Redes Sociais'
+            type: object
+            fields:
+              - name: instagram
+                label: 'Instagram da sua empresa'
+                description: 'https://www.instagram.com/......'
+                type: string
+              - name: linkedin
+                label: 'Linkedin da sua empresa'
+                description: 'https://www.linkedin.com/......'
+                type: string
+              - name: facebook
+                label: 'Facebook da sua empresa'
+                description: 'https://www.facebook.com/......'
+                type: string
+              - name: youtube
+                label: 'Youtube da sua empresa'
+                description: 'https://www.youtube.com/......'
+                type: string
+          - name: maps
+            label: 'Google Maps'
+            description: 'Para colocar sua empresa no Google Maps gratuitamente, crie ou reivindique seu Perfil da Empresa no Google (antigo Google Meu Negócio) acessando business.google.com/add. Preencha dados como nome, endereço, categoria e horário, e conclua a verificação por código (via telefone, SMS ou e-mail) para que o local fique ativo.'
+            type: string
+          - name: address
+            label: 'Endereço da sua empresa'
+            type: object
+            fields:
+              - name: city
+                label: 'Cidade'
+                description: 'ex: Ribeirão Preto'
+                required: true
+                type: string
+              - name: state
+                label: 'Estado'
+                description: 'ex: SP'
+                required: true
+                type: string
+              - name: cep
+                label: 'CEP'
+                description: 'ex: 14020-078'
+                required: true
+                type: string
+              - name: road
+                label: 'Rua'
+                description: 'ex: Travessa Macau'
+                required: true
+                type: string
+              - name: number
+                label: 'Número'
+                description: 'ex: 275'
+                required: true
+                type: number
+              - name: district
+                label: 'Bairro'
+                description: 'ex: Vila Seixas'
+                required: true
+                type: string
+          - name: openingHours
+            label: 'Horario de Funcionamento'
+            type: text
             options:
-             media: brand
-         
+             maxlength: 140
+          - name: paymentMethods
+            label: 'Formas de Pagamento'
+            type: select
+            options:
+             placeholder: 'Selecione'
+             multiple: true
+             values: [ Débito, Crédito, Boleto, Pix ]
+            
+      # banenr     
   - name: banners
     label: 'Banners'
     type: file
