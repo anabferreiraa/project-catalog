@@ -144,12 +144,12 @@ content:
             type: text
             options:
              maxlength: 140
-          - name: tag
-            label: Tag
+          - name: paymentMethods
+            label: 'Formas de Pagamento'
             type: select
             options:
              multiple: true
-             values: [ Tech, News, Sports ]
+             values: [ Debito, Credito, Boleto, Pix ]
             
       # banenr     
   - name: banners
