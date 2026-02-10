@@ -29,9 +29,10 @@
     },
     "openingHours": "Segunda a sexta-feira das 8h às 17h | Sábado das 9h às 12h",
     "paymentMethods": [
-      "Debito",
-      "Credito",
-      "Boleto"
+      "Débito",
+      "Crédito",
+      "Boleto",
+      "Pix"
     ]
   }
 }
