@@ -144,6 +144,11 @@ content:
             type: text
             options:
              maxlength: 140
+          - name: tag
+            label: Tag
+            type: select
+            options:
+             values: [ Tech, News, Sports ]
             
       # banenr     
   - name: banners
