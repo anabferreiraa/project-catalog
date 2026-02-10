@@ -148,6 +148,7 @@ content:
             label: Tag
             type: select
             options:
+             multiple: true
              values: [ Tech, News, Sports ]
             
       # banenr     
