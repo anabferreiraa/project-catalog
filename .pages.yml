@@ -149,7 +149,6 @@ content:
             type: select
             options:
              placeholder: 'Selecione'
-             creatable: true
              multiple: true
              values: [ Debito, Credito, Boleto, Pix ]
             
