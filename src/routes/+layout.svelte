@@ -5,6 +5,7 @@
 	import AnnouncementData from "$cms/announcement-bar.json"
 	import BrandBar from '$lib/Components/BrandBar/BrandBar.svelte';
 	import GeneralConfigurationData from '$cms/general-configuration.json'
+	import Footer from '$lib/Section/Footer/Footer.svelte';
 	let { children } = $props();
 	//
 </script>
@@ -15,5 +16,6 @@
     name: GeneralConfigurationData.companyInformation.companyBrand.brand,
     alt: `Logo marca da empresa ${GeneralConfigurationData.companyInformation.companyName}`
   }}/>
-
 {@render children()}
+
+<Footer company= {GeneralConfigurationData.companyInformation}/>
