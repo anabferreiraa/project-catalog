@@ -20,14 +20,13 @@
 		}
     } = $props()
 </script>
-
-	<div class="h-auto w-75">
+  <div class="rounded-2xl overflow-hidden shadow-md">
+<div class="h-auto w-75 ">
 		{#each images as image}
 			<img src={image.dir} alt={image.alt} />
 		{/each}
 	</div>
-
-	<div class="space-y-2 bg-gray-100 p-2">
+	<div class="space-y-2 bg-gray-100 p-2  ">
         <span class="text-sm">{sku}</span>
 		<h2 class="text-xl font-bold">{name}</h2>
 
@@ -58,4 +57,6 @@
 		</button>
 	</div>
 
+  </div>
+	
 

@@ -1,29 +1,23 @@
 <script>
 	import ProductCard from '../ProductCard/ProductCard.svelte';
 
-	const { titleCollection = 'coleção' , products=[{}] } = $props();
+	const { titleCollection = 'coleção', products = [{}] } = $props();
 </script>
 
-<section>
-	<div class="container">
+<section class=" bg-gray-50/30 py-10">
+	<div class="container mx-auto flex flex-col gap-6" >
 		<div>
-			<h2>
+			<h2 class="text-2xl font-bold">
 				{titleCollection}
 			</h2>
 		</div>
-		<div class="flex gap-6 px-6 overflow-x-auto snap-x snap-mandatory scroll-smooth">
-	{#each products as { sku, images, name, description, variation, price }}
-		<div class="snap-center shrink-0 snap-always">
-			<ProductCard
-				sku={sku}
-				{images}
-				name={name}
-				description={description}
-				{variation}
-				{price}
-			/>
+		<div class="flex pb-3 snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth ">
+			{#each products as { sku, images, name, description, variation, price }}
+				<div class="shrink-0 snap-center snap-always">
+					<ProductCard {sku} {images} {name} {description} {variation} {price} />
+				</div>
+			{/each}
 		</div>
-	{/each}
-</div>
+		<hr>
 	</div>
 </section>
