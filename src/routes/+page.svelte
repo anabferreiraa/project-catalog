@@ -7,4 +7,7 @@
 </script>
 
 <BannerCarousel banners={bannerDate.banners} />
+
+<Collection titleCollection = {exemplo.nameCollection} products = {exemplo.products}  />
+<hr>
 <Collection titleCollection = {exemplo.nameCollection} products = {exemplo.products}  />

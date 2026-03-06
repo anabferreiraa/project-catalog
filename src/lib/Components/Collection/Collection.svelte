@@ -31,24 +31,12 @@
 
 <section class=" bg-gray-50/70 py-10">
 	<div class="px-6 lg:pl-15 grid grid-cols-1 gap-6">
+		<div class="flex justify-between pr-16">
 		<div>
-			<h2 class="text-2xl font-bold">
+           <h2 class="text-2xl font-bold">
 				{titleCollection}
 			</h2>
 		</div>
-
-		<div
-			class="no-scrollbar flex snap-x snap-mandatory  overflow-x-auto scroll-smooth pb-3"
-			bind:this={carousel}
-		>
-			{#each products as { sku, images, name, description, variation, price }}
-				<div class="shrink-0 mr-3 md:mr-6 snap-center snap-normal">
-					<ProductCard {sku} {images} {name} {description} {variation} {price} />
-				</div>
-			{/each}
-		</div>
-		<div class="flex items-center gap-3 lg:pr-15">
-			<div class="h-px w-full lg:w-[80%] rounded-full bg-gray-600"></div>
 			<div class="hidden gap-3 lg:flex">
 				<button
 					class=" h-12 w-12 cursor-pointer rounded-full bg-white px-2 text-center shadow-md"
@@ -64,5 +52,17 @@
 				</button>
 			</div>
 		</div>
+
+		<div
+			class="no-scrollbar flex snap-x snap-mandatory  overflow-x-auto scroll-smooth pb-3"
+			bind:this={carousel}
+		>
+			{#each products as { sku, images, name, description, variation, price }}
+				<div class="shrink-0 mr-3 md:mr-6 snap-center snap-normal">
+					<ProductCard {sku} {images} {name} {description} {variation} {price} />
+				</div>
+			{/each}
+		</div>
+		
 	</div>
 </section>
