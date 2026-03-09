@@ -149,7 +149,17 @@ content:
            required: true
            options:
             media: products 
-      
+     - name: variations
+       type: object
+       label: Variações (Cor e Tamanho)
+       list: true
+       fields:
+        - name: color
+          type: string
+          label: Cor
+        - name: size
+          type: string
+          label: Tamanho 
        
     
   
