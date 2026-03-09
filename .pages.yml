@@ -115,6 +115,24 @@ content:
        type: string
        label: 'Nome do Produto'
        isTitle: true
+     - name: description
+       type: text
+       label: Descrição
+     - name: price
+       label: 'Valor do Produto'
+       type: object
+       fields:
+        - name: default
+          type: number
+          label: 'Preço'
+        - name:  discount
+          type: number
+          label: 'Desconto'
+        - name: installment
+          type: number
+          label: 'Preço de parcela'
+        
+       
     
   
         
