@@ -170,7 +170,29 @@ content:
            - name: size
              type: string
              label: Tamanho
-       
+
+      # Coleções
+  - name: collections
+    label: 'Coleções'
+    type: collection
+    path: 'src/content/collections'
+    format: 'json'
+    fields:
+     - name: id
+       type: uuid
+       label: 'ID Único'
+     - name: title
+       type: string
+       label: ' Título da Coleção'
+       isTitle: true
+     - name: slug
+       type: string
+       label: 'Slug da URL (EX: roupas-de-verao)'
+     - name: produts
+       type: reference
+       label: 'Lista de Produtos'
+       collection: products
+       list: true
     
   
         
