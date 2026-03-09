@@ -48,7 +48,7 @@ content:
   - name: banners
     label: 'Banners'
     type: file
-    path: 'src/cms/banners.json'
+    path: 'src/content/products/cms/banners.json'
     format: 'json'
     fields:
      - name: banners
@@ -99,4 +99,18 @@ content:
               label: 'Descrição da Imagem para Mobile'
               description: 'Forneça um texto alternativo que descreva o conteúdo da imagem'
               type: string
-              required: true      
+              required: true 
+              
+        # Produtos
+  - name: products
+    label: 'Produtos'
+    type: collection
+    path: 'src/content/products.json'
+    format: 'json'
+    fields: 
+     - name: id
+       type: uuid
+       label: ID Único
+    
+  
+        
