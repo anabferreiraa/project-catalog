@@ -10,6 +10,12 @@ media:
    input: static/images/banners
    output: /images/banners
    extensions: [ webp ]
+
+ - name: products
+   label: 'Pasta de Produtos'
+   input: static/images/products
+   output: /images/products
+   extensions: [ webp ]
    
 content:
   - name: announcementBar
@@ -131,7 +137,19 @@ content:
         - name: installment
           type: number
           label: 'Preço de parcela'
-        
+     - name: imagens
+       type: image
+       label: 'Imagens do Produto'
+       list: true
+       fields: 
+         - name: src
+           label: 'Selecione a imagem'
+           description: 'Tamanho recomendado 3072x900 em .jpg, .jpeg, .webp ou .avif'
+           type: image
+           required: true
+           options:
+            media: products 
+      
        
     
   
