@@ -111,6 +111,10 @@ content:
      - name: id
        type: uuid
        label: ID Único
+     - name: name
+       type: string
+       label: 'Nome do Produto'
+       isTitle: true
     
   
         
