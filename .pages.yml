@@ -120,7 +120,6 @@ content:
      - name: name
        type: string
        label: 'Nome do Produto'
-       isTitle: true
      - name: description
        type: text
        label: Descrição
@@ -191,8 +190,9 @@ content:
      - name: produts
        type: reference
        label: 'Lista de Produtos'
-       collection: products
-       list: true
+       options:
+          collection: products
+          multiple: true
     
   
         
