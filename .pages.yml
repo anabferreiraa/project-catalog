@@ -157,9 +157,19 @@ content:
         - name: color
           type: string
           label: Cor
+          list: true
+          fields:
+           - name: color
+             type: string
+             label: Cor
         - name: size
           type: string
-          label: Tamanho 
+          label: Tamanho
+          list: true
+          fields:
+           - name: size
+             type: string
+             label: Tamanho
        
     
   
