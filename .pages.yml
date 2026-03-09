@@ -207,4 +207,4 @@ content:
               label: 'Descrição da Imagem para Mobile'
               description: 'Forneça um texto alternativo que descreva o conteúdo da imagem'
               type: string
-              required: true      
+              required: true    
