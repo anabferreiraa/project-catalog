@@ -183,7 +183,6 @@ content:
      - name: title
        type: string
        label: ' Título da Coleção'
-       isTitle: true
      - name: slug
        type: string
        label: 'Slug da URL (EX: roupas-de-verao)'
