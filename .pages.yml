@@ -244,8 +244,17 @@ content:
           type: number
           label: 'Preço'
         - name:  discount
-          type: number
-          label: 'Desconto'
+          type: object
+          fields: 
+           - name: badge
+             label: 'Ativar promoção?'
+             description: 'Se ativado, uma tag de promoção será exibida no produto.'
+             type: boolean
+             default: false
+             required: false
+           - name: discount
+             label: 'Desconto'
+             type: number
         - name: installment
           type: number
           label: 'Preço de parcela' 
