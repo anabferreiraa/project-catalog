@@ -216,6 +216,18 @@ content:
     path: 'src/content/products.json'
     format: 'json'
     fields: 
+     - name: imagens
+       type: image
+       label: 'Imagens do Produto'
+       list: true
+       fields: 
+         - name: src
+           label: 'Selecione a imagem'
+           description: 'Tamanho recomendado 3072x900 em .jpg, .jpeg, .webp ou .avif'
+           type: image
+           required: true
+           options:
+            media: products
      - name: name
        type: string
        label: 'Nome do Produto'
@@ -234,19 +246,7 @@ content:
           label: 'Desconto'
         - name: installment
           type: number
-          label: 'Preço de parcela'
-     - name: imagens
-       type: image
-       label: 'Imagens do Produto'
-       list: true
-       fields: 
-         - name: src
-           label: 'Selecione a imagem'
-           description: 'Tamanho recomendado 3072x900 em .jpg, .jpeg, .webp ou .avif'
-           type: image
-           required: true
-           options:
-            media: products 
+          label: 'Preço de parcela' 
      - name: variations
        type: object
        label: Variações (Cor e Tamanho)
@@ -260,17 +260,16 @@ content:
            - name: color
              type: string
              label: Cor
-        - name: size
-          type: string
-          label: Tamanho
-          list: true
-          fields:
            - name: size
-             type: string
-             label: Tamanho
-        - name: id
-          type: uuid
-          label: ID Único
+             label: 'Tamanho'
+             type: select
+             options:
+              placeholder: 'Selecione'
+              multiple: true
+              values: [ PP, P, M, G, GG, PLUS ]
+     - name: id
+       type: uuid
+       label: ID Único
 
       # Coleções
   - name: collections
