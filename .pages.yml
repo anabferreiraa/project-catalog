@@ -243,7 +243,8 @@ content:
         - name: default
           type: number
           label: 'Preço'
-        - name:  discount
+        - name:  promotion
+          label: 'Promoção'
           type: object
           fields: 
            - name: badge
