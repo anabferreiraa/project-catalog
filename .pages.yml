@@ -258,6 +258,7 @@ content:
           type: select
           options:
            placeholder: 'Selecione'
+           creatable: true
            multiple: true
            values: [ azul, preto, rosa, vermelho, verde, roxo ]
         - name: size
