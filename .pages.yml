@@ -216,9 +216,6 @@ content:
     path: 'src/content/products.json'
     format: 'json'
     fields: 
-     - name: id
-       type: uuid
-       label: ID Único
      - name: name
        type: string
        label: 'Nome do Produto'
@@ -271,6 +268,9 @@ content:
            - name: size
              type: string
              label: Tamanho
+        - name: id
+          type: uuid
+          label: ID Único
 
       # Coleções
   - name: collections
