@@ -234,6 +234,8 @@ content:
      - name: description
        type: text
        label: Descrição
+       options:
+         maxlength: 250
      - name: price
        label: 'Valor do Produto'
        type: object
