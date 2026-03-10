@@ -276,9 +276,6 @@ content:
     path: 'src/content/collections'
     format: 'json'
     fields:
-     - name: id
-       type: uuid
-       label: 'ID Único'
      - name: title
        type: string
        label: ' Título da Coleção'
@@ -291,4 +288,6 @@ content:
        options:
           collection: products
           multiple: true
-    
+     - name: id
+       type: uuid
+       label: 'ID Único'
