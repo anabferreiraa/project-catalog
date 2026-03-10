@@ -208,3 +208,90 @@ content:
               description: 'Forneça um texto alternativo que descreva o conteúdo da imagem'
               type: string
               required: true    
+
+ # Produtos
+  - name: products
+    label: 'Produtos'
+    type: collection
+    path: 'src/content/products.json'
+    format: 'json'
+    fields: 
+     - name: id
+       type: uuid
+       label: ID Único
+     - name: name
+       type: string
+       label: 'Nome do Produto'
+     - name: description
+       type: text
+       label: Descrição
+     - name: price
+       label: 'Valor do Produto'
+       type: object
+       fields:
+        - name: default
+          type: number
+          label: 'Preço'
+        - name:  discount
+          type: number
+          label: 'Desconto'
+        - name: installment
+          type: number
+          label: 'Preço de parcela'
+     - name: imagens
+       type: image
+       label: 'Imagens do Produto'
+       list: true
+       fields: 
+         - name: src
+           label: 'Selecione a imagem'
+           description: 'Tamanho recomendado 3072x900 em .jpg, .jpeg, .webp ou .avif'
+           type: image
+           required: true
+           options:
+            media: products 
+     - name: variations
+       type: object
+       label: Variações (Cor e Tamanho)
+       list: true
+       fields:
+        - name: color
+          type: string
+          label: Cor
+          list: true
+          fields:
+           - name: color
+             type: string
+             label: Cor
+        - name: size
+          type: string
+          label: Tamanho
+          list: true
+          fields:
+           - name: size
+             type: string
+             label: Tamanho
+
+      # Coleções
+  - name: collections
+    label: 'Coleções'
+    type: collection
+    path: 'src/content/collections'
+    format: 'json'
+    fields:
+     - name: id
+       type: uuid
+       label: 'ID Único'
+     - name: title
+       type: string
+       label: ' Título da Coleção'
+     - name: slug
+       type: string
+       label: 'Slug da URL (EX: roupas-de-verao)'
+     - name: produts
+       type: reference
+       label: 'Lista de Produtos'
+       options:
+          collection: products
+          multiple: true
+    
