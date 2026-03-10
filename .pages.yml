@@ -233,7 +233,7 @@ content:
        label: 'Nome do Produto'
      - name: description
        type: text
-       label: Descrição
+       label: 'Descrição'
        options:
          maxlength: 250
      - name: price
