@@ -243,6 +243,9 @@ content:
         - name: default
           type: number
           label: 'Preço'
+        - name: installment
+          type: number
+          label: 'Preço de parcela'
         - name:  promotion
           label: 'Promoção'
           type: object
@@ -255,10 +258,7 @@ content:
              required: false
            - name: discount
              label: 'Desconto'
-             type: number
-        - name: installment
-          type: number
-          label: 'Preço de parcela' 
+             type: number 
      - name: variations
        type: object
        label: Variações (Cor e Tamanho)
