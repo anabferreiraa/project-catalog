@@ -250,7 +250,6 @@ content:
      - name: variations
        type: object
        label: Variações (Cor e Tamanho)
-       list: true
        fields:
         - name: color
           label: 'cor'
