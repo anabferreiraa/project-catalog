@@ -253,20 +253,19 @@ content:
        list: true
        fields:
         - name: color
-          type: string
-          label: Cor
-          list: true
-          fields:
-           - name: color
-             type: string
-             label: Cor
-           - name: size
-             label: 'Tamanho'
-             type: select
-             options:
-              placeholder: 'Selecione'
-              multiple: true
-              values: [ PP, P, M, G, GG, PLUS ]
+          label: 'cor'
+          type: select
+          options:
+           placeholder: 'Selecione'
+           multiple: true
+           values: [ azul, preto, rosa, vermelho, verde, roxo ]
+        - name: size
+          label: 'Tamanho'
+          type: select
+          options:
+           placeholder: 'Selecione'
+           multiple: true
+           values: [ PP, P, M, G, GG, PLUS ]
      - name: id
        type: uuid
        label: ID Único
