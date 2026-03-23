@@ -15,14 +15,17 @@
 
 	const { product, productIndex }: Props = $props();
 
+	// Índice da imagem principal exibida
+	let selectedImageIndex = $state(0);
+
 	// Estado local — cor e tamanho selecionados
-	// Usa $state para permitir escrita e $effect para resetar ao trocar de produto
 	let selectedColor = $state('');
 	let selectedSize = $state('');
 
 	$effect(() => {
 		selectedColor = product.variation.color[0] ?? '';
 		selectedSize = product.variation.size[0] ?? '';
+		selectedImageIndex = 0;
 	});
 
 	/** Adiciona o produto ao carrinho com a variação selecionada */
@@ -36,19 +39,67 @@
 			? product.price.default * (1 - product.price.discount / 100)
 			: product.price.default
 	);
+
+	/** Imagem principal selecionada */
+	const mainImage = $derived(product.images[selectedImageIndex]);
 </script>
 
 <section class="py-10">
+	<!-- Botão voltar -->
+	<div class="px-6 pb-6 lg:px-15">
+		<a
+			href="/"
+			class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 transition-colors hover:text-gray-800"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="h-4 w-4"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke="currentColor"
+				stroke-width="2"
+			>
+				<path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+			</svg>
+			Voltar à página inicial
+		</a>
+	</div>
+
 	<div class="grid grid-cols-1 gap-8 px-6 lg:grid-cols-2 lg:px-15">
 		<!-- Galeria de imagens -->
 		<div class="flex flex-col gap-4">
-			{#each product.images as { dir, alt }, i (i)}
-				<img
-					class="w-full rounded-2xl object-cover"
-					src={dir}
-					alt={alt || product.name}
-				/>
-			{/each}
+			<!-- Imagem principal -->
+			{#if mainImage}
+				<div class="overflow-hidden rounded-2xl bg-gray-50">
+					<img
+						class="aspect-square w-full object-cover lg:max-h-[560px]"
+						src={mainImage.dir}
+						alt={mainImage.alt || product.name}
+					/>
+				</div>
+			{/if}
+
+			<!-- Thumbnails / Mini slider -->
+			{#if product.images.length > 1}
+				<div class="flex gap-3 overflow-x-auto pb-2">
+					{#each product.images as { dir, alt }, i (i)}
+						<button
+							class="h-20 w-20 flex-shrink-0 cursor-pointer overflow-hidden rounded-xl border-2 transition-all
+								{selectedImageIndex === i
+								? 'border-gray-800 ring-2 ring-gray-800/20'
+								: 'border-gray-200 hover:border-gray-400'}"
+							onclick={() => (selectedImageIndex = i)}
+							aria-label="Ver imagem {i + 1}"
+						>
+							<img
+								class="h-full w-full object-cover"
+								src={dir}
+								alt={alt || `${product.name} - imagem ${i + 1}`}
+							/>
+						</button>
+					{/each}
+				</div>
+			{/if}
 		</div>
 
 		<!-- Detalhes do produto -->
