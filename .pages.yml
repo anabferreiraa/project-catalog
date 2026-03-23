@@ -3,19 +3,19 @@ media:
    label: 'Pasta de logo'
    input: static/images/brand
    output: /images/brand
-   extensions: [ webp ]
+   extensions: [png, jpg, webp]
    
  - name: banners
    label: 'Pasta de Carrosel'
    input: static/images/banners
    output: /images/banners
-   extensions: [ webp ]
+   extensions: [png, jpg, webp]
    
- - name: productos
+ - name: product
    label: 'Pasta de Produtos'
-   input: static/images/productos
-   output: /images/productos
-   extensions: [png, jpg, webp]   
+   input: static/images/products
+   output: /images/products
+   extensions: [png, jpg, webp]
    
 content:
   - name: announcementBar
