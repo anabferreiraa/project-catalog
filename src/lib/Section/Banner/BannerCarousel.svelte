@@ -1,33 +1,7 @@
 <script lang="ts">
-	import emblaCarouselSvelte from 'embla-carousel-svelte';
-	import Autoplay from 'embla-carousel-autoplay';
-	import Fade from 'embla-carousel-fade';
+	import { onMount } from 'svelte';
 
-	let options = { loop: true };
-	let plugins = [Autoplay(), Fade()];
-
-	let emblaApi: any;
-
-	// bolinhas
-	let scrollSnaps: any[] = $state( [] );
-	let selectedSnap: number = $state( 0 )
-
-	const goTo = (index: number) => emblaApi?.goTo(index);
-	const setupSnaps = (emblaApi: any) => (scrollSnaps = emblaApi.snapList());
-	const setActiveSnap = (emblaApi: any) => (selectedSnap = emblaApi.selectedSnap());
-
-	const onInit = (event: any) => {
-		emblaApi = event.detail;
-
-		setupSnaps(emblaApi);
-		setActiveSnap(emblaApi);
-
-		emblaApi.on('reinit', setupSnaps);
-		emblaApi.on('reinit', setActiveSnap);
-		emblaApi.on('select', setActiveSnap);
-	};
-
-	interface Banners {
+	interface Banner {
 		link?: string;
 		blank: boolean;
 		desktopImage: {
@@ -39,8 +13,10 @@
 			alt: string;
 		};
 	}
+
 	interface Props {
-		banners?: Banners[];
+		banners?: Banner[];
+		interval?: number;
 	}
 
 	let {
@@ -48,82 +24,124 @@
 			{
 				link: '',
 				blank: false,
-				desktopImage: {
-					src: 'test',
-					alt: 'test'
-				},
-				mobileImage: {
-					src: 'test',
-					alt: 'test'
-				}
+				desktopImage: { src: 'test', alt: 'test' },
+				mobileImage: { src: 'test', alt: 'test' }
 			}
-		]
+		],
+		interval = 5000
 	}: Props = $props();
+
+	let current = $state(0);
+	let paused = $state(false);
+	let timer: ReturnType<typeof setInterval> | null = null;
+
+	const total = $derived(banners.length);
+
+	function goTo(index: number) {
+		current = ((index % total) + total) % total;
+	}
+
+	function next() {
+		goTo(current + 1);
+	}
+
+	function startAutoplay() {
+		stopAutoplay();
+		timer = setInterval(() => {
+			if (!paused) next();
+		}, interval);
+	}
+
+	function stopAutoplay() {
+		if (timer) {
+			clearInterval(timer);
+			timer = null;
+		}
+	}
+
+	onMount(() => {
+		startAutoplay();
+		return () => stopAutoplay();
+	});
 </script>
 
-<section class=" h-auto w-full bg-amber-200">
-	<div class="embla">
-		<div class="embla__viewport" emblainit={onInit} use:emblaCarouselSvelte={{ options, plugins }}>
-			<div class="embla__container">
-				{#each banners as { link, blank, desktopImage, mobileImage }}
-					<div class="embla__slide">
-						{#if link != ''}
-							<a href={link} target={blank ? '_blank' : '_self'}>
-								<img
-									class="hidden h-auto w-full lg:block"
-									src={desktopImage.src}
-									alt={desktopImage.alt}
-								/>
-								<img class="h-auto w-full lg:hidden" src={mobileImage.src} alt={mobileImage.alt} />
-							</a>
-						{:else}
-							<img
-								class="hidden h-auto w-full lg:block"
-								src={desktopImage.src}
-								alt={desktopImage.alt}
-							/>
-							<img class="h-auto w-full lg:hidden" src={mobileImage.src} alt={mobileImage.alt} />
-						{/if}
-					</div>
-				{/each}
+<section
+	aria-label="Banner carousel"
+	class="relative w-full overflow-hidden"
+	onmouseenter={() => (paused = true)}
+	onmouseleave={() => (paused = false)}
+>
+	<!-- Slides -->
+	<div
+		class="flex transition-transform duration-700 ease-in-out"
+		style="transform: translateX(-{current * 100}%)"
+	>
+		{#each banners as { link, blank, desktopImage, mobileImage }, i (i)}
+			<div class="w-full flex-shrink-0">
+				{#if link && link !== ''}
+					<a href={link} target={blank ? '_blank' : '_self'}>
+						<img
+							class="hidden h-auto w-full object-cover lg:block"
+							src={desktopImage.src}
+							alt={desktopImage.alt}
+						/>
+						<img
+							class="h-auto w-full object-cover lg:hidden"
+							src={mobileImage.src}
+							alt={mobileImage.alt}
+						/>
+					</a>
+				{:else}
+					<img
+						class="hidden h-auto w-full object-cover lg:block"
+						src={desktopImage.src}
+						alt={desktopImage.alt}
+					/>
+					<img
+						class="h-auto w-full object-cover lg:hidden"
+						src={mobileImage.src}
+						alt={mobileImage.alt}
+					/>
+				{/if}
 			</div>
-		</div>
-		<div class="embla__dots">
-			{#each scrollSnaps as _, index}
+		{/each}
+	</div>
+
+	<!-- Setas de navegação -->
+	{#if total > 1}
+		<button
+			class="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/50"
+			onclick={() => goTo(current - 1)}
+			aria-label="Slide anterior"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+			</svg>
+		</button>
+
+		<button
+			class="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/50"
+			onclick={() => goTo(current + 1)}
+			aria-label="Próximo slide"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+			</svg>
+		</button>
+	{/if}
+
+	<!-- Dots indicadores -->
+	{#if total > 1}
+		<div class="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+			{#each banners as _, index (index)}
 				<button
-					class="embla__dot h-4 w-3 rounded-full bg-amber-400"
-					class:embla__dot--selected={index === selectedSnap}
+					class="h-3 w-3 rounded-full border-2 border-white transition-all duration-300 {index === current
+						? 'scale-110 bg-white'
+						: 'bg-white/40 hover:bg-white/70'}"
 					onclick={() => goTo(index)}
-				>
-					<!-- Button content -->
-				</button>
+					aria-label="Ir para slide {index + 1}"
+				></button>
 			{/each}
 		</div>
-	</div>
+	{/if}
 </section>
-
-<style>
-	.embla {
-		position: relative;
-	}
-	.embla__viewport {
-		overflow: hidden;
-	}
-	.embla__container {
-		display: flex;
-		gap: 0;
-		touch-action: pan-y pinch-zoom;
-	}
-	.embla__slide {
-		flex: 0 0 100%;
-		min-width: 0;
-		height: 500px;
-	}
-	.embla__dot {
-		opacity: 0.5;
-	}
-
-	.embla__dot--selected {
-		opacity: 1;
-	}
-</style>

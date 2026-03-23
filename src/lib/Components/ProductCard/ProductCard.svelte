@@ -8,7 +8,6 @@
 			}
 			],
         name= 'nome',
-        description= 'dddd',
         variation= {
             color: ['#dc2626', '#22c55e'],
             size: ['P', 'M', 'G'],
@@ -20,13 +19,14 @@
 		}
     } = $props()
 </script>
-  <div class="rounded-2xl overflow-hidden shadow-md">
+<a href="/produto ">
+<div class="rounded-2xl overflow-hidden shadow-md">
 <div class="h-auto w-75 ">
-		{#each images as image}
-			<img src={image.dir} alt={image.alt} />
-		{/each}
+
+			<img src={images[0].dir} alt={images[0].alt} />
+		
 	</div>
-	<div class="space-y-2 bg-gray-100 p-2  ">
+	<div class="space-y-2 bg-gray-100 p-2 ">
         <span class="text-sm">{sku}</span>
 		<h2 class="text-xl font-bold">{name}</h2>
 
@@ -58,5 +58,7 @@
 	</div>
 
   </div>
+</a>
+
 	
 
