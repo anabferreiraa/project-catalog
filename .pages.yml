@@ -237,7 +237,7 @@ content:
            options:
              media: products
              multiple:
-               max: 6
+               max: 4
      - name: name
        type: string
        label: 'Nome do Produto'
