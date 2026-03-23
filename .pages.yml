@@ -285,6 +285,7 @@ content:
           options:
            placeholder: 'Selecione'
            multiple: true
+           creatable: true
            values: [ PP, P, M, G, GG, PLUS ]
      - name: id
        type: uuid
