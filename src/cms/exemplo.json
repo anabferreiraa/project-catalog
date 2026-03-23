@@ -3,6 +3,7 @@
 	"nameCollection": "Coleção",
 	"products": [
 		{
+			"id": "prod-001",
 			"sku": "",
 			"images": [
 				{
@@ -23,6 +24,7 @@
 			}
 		},
 		{
+			"id": "prod-002",
 			"sku": "",
 			"images": [
 				{
@@ -43,6 +45,7 @@
 			}
 		},
 		{
+			"id": "prod-003",
 			"sku": "",
 			"images": [
 				{
@@ -63,6 +66,7 @@
 			}
 		},
 		{
+			"id": "prod-004",
 			"sku": "",
 			"images": [
 				{
@@ -83,6 +87,7 @@
 			}
 		},
 		{
+			"id": "prod-005",
 			"sku": "",
 			"images": [
 				{
@@ -103,6 +108,7 @@
 			}
 		},
 		{
+			"id": "prod-006",
 			"sku": "",
 			"images": [
 				{
@@ -123,6 +129,7 @@
 			}
 		},
 		{
+			"id": "prod-007",
 			"sku": "",
 			"images": [
 				{
