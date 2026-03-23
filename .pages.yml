@@ -11,6 +11,12 @@ media:
    output: /images/banners
    extensions: [ webp ]
    
+ - name: productos
+   label: 'Pasta de Produtos'
+   input: static/images/productos
+   output: /images/productos
+   extensions: [png, jpg, webp]   
+   
 content:
   - name: announcementBar
     label: 'Barra de anúncio'
