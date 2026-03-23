@@ -221,7 +221,7 @@ content:
   - name: products
     label: 'Produtos'
     type: collection
-    path: 'src/content/products.json'
+    path: 'src/cms/products.json'
     format: 'json'
     fields: 
      - name: imagens
@@ -296,7 +296,7 @@ content:
   - name: collections
     label: 'Coleções'
     type: collection
-    path: 'src/content/collections'
+    path: 'src/cms/collections'
     format: 'json'
     fields:
      - name: title
