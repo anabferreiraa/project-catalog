@@ -8,19 +8,23 @@
  */
 import type { PageLoad } from './$types';
 import { error } from '@sveltejs/kit';
-import exemploData from '$cms/exemplo.json';
+import { getProductByIndex, allProducts } from '$lib/cms';
 
 export const load: PageLoad = ({ params }) => {
 	// Converte o parâmetro da URL para número (índice do array)
 	const index = parseInt(params.uuid, 10);
 
 	// Valida: deve ser um número válido e estar dentro do range do array
-	if (isNaN(index) || index < 0 || index >= exemploData.products.length) {
+	if (isNaN(index) || index < 0 || index >= allProducts.length) {
 		error(404, 'Produto não encontrado');
 	}
 
 	// Busca o produto pelo índice no array
-	const product = exemploData.products[index];
+	const product = getProductByIndex(index);
+
+	if (!product) {
+		error(404, 'Produto não encontrado');
+	}
 
 	// Retorna o produto e o índice para uso no +page.svelte
 	return { product, productIndex: index };

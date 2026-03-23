@@ -83,8 +83,8 @@
 		{#each products as product, i (i)}
 			<div class="carousel-item shrink-0 snap-start {i === 0 ? 'pl-6 lg:pl-15' : ''}">
 				<div class="pr-4">
-					<!-- Passa o produto E o índice para o card -->
-					<ProductCard {product} index={i} />
+					<!-- Passa o produto E o índice global para o card -->
+					<ProductCard {product} index={product.globalIndex ?? i} />
 				</div>
 			</div>
 		{/each}

@@ -2,7 +2,7 @@
 	import bannerDate from '$cms/banners.json';
 	import BannerCarousel from '$lib/Section/Banner/BannerCarousel.svelte';
 	import Collection from '$lib/Components/Collection/Collection.svelte';
-	import exemplo from '$cms/exemplo.json';
+	import { allCollections } from '$lib/cms';
 </script>
 
 <svelte:head>
@@ -10,6 +10,6 @@
 </svelte:head>
 <BannerCarousel banners={bannerDate.banners} />
 
-<Collection titleCollection={exemplo.nameCollection} products={exemplo.products} />
-
-<Collection titleCollection={exemplo.nameCollection} products={exemplo.products} />
+{#each allCollections as collection}
+	<Collection titleCollection={collection.nameCollection} products={collection.products} />
+{/each}

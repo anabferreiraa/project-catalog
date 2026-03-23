@@ -41,6 +41,7 @@ export interface ProductPrice {
 
 /** Produto completo — corresponde à estrutura de cada item no CMS */
 export interface Product {
+	globalIndex?: number; // índice absoluto na lista para roteamento dinâmico e carrinho
 	sku: string; // código do produto (opcional, pode ser vazio)
 	images: ProductImage[]; // lista de imagens do produto
 	name: string; // nome do produto
