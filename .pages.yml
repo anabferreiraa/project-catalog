@@ -235,7 +235,7 @@ content:
            type: image
            required: true
            options:
-            media: products
+             media: products
      - name: name
        type: string
        label: 'Nome do Produto'
