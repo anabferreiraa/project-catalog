@@ -5,6 +5,9 @@
 	import exemplo from '$cms/exemplo.json';
 </script>
 
+<svelte:head>
+	<title>Início</title>
+</svelte:head>
 <BannerCarousel banners={bannerDate.banners} />
 
 <Collection titleCollection={exemplo.nameCollection} products={exemplo.products} />
