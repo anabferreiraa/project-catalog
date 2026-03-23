@@ -225,7 +225,7 @@ content:
     format: 'json'
     fields: 
      - name: imagens
-       type: image
+       type: object
        label: 'Imagens do Produto'
        list: true
        fields: 
