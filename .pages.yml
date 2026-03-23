@@ -9,6 +9,7 @@ media:
    label: 'Pasta de Carrosel'
    input: static/images/banners
    output: /images/banners
+   rename: true
    extensions: [png, jpg, webp]
    
  - name: product
