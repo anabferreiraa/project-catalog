@@ -32,20 +32,16 @@
 
 <!-- Link para a página dinâmica do produto usando o índice -->
 <a href="/product/{index}" class="block">
-	<div class="rounded-2xl overflow-hidden shadow-md w-75">
+	<div class="h-[560px] w-75 overflow-hidden border-radius shadow-md">
 		<!-- Imagem principal do produto (primeira do array) -->
-		<div class="h-auto">
+		<div class="h-[350px]">
 			{#if product.images.length > 0}
 				{@const img = product.images[0]}
 				<picture>
 					{#if img.webp}<source srcset={img.webp} type="image/webp" />{/if}
 					{#if img.jpg}<source srcset={img.jpg} type="image/jpeg" />{/if}
 					{#if img.png}<source srcset={img.png} type="image/png" />{/if}
-					<img
-						class="h-auto w-full object-cover"
-						src={img.dir}
-						alt={img.alt}
-					/>
+					<img class="h-full w-full object-cover" src={img.dir} alt={img.alt} />
 				</picture>
 			{/if}
 		</div>
@@ -56,15 +52,18 @@
 				<span class="text-sm text-gray-500">{product.sku}</span>
 			{/if}
 
-			<h2 class="text-xl font-bold">{product.name}</h2>
+			<h2>{product.name}</h2>
 
 			<div class="flex flex-col">
-				<span class="text-2xl font-semibold">
-					{product.price.installment.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
-				</span>
-				<span class="text-sm text-gray-600">
-					ou {product.price.default.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} à vista
-				</span>
+				<!-- <span class="text-2xl font-semibold">
+					{product.price.installment.toLocaleString('pt-BR', {
+						style: 'currency',
+						currency: 'BRL'
+					})}
+				</span> -->
+				<p class="text-md font-medium text-green-600">
+					{product.price.default.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} à vista
+				</p>
 			</div>
 
 			{#if product.variation.color.length > 0}
@@ -89,7 +88,7 @@
 			{/if}
 
 			<button
-				class="w-full cursor-pointer rounded-full bg-green-600 py-2 text-[#F6ECC9] transition-colors hover:bg-green-700"
+				class="w-full cursor-pointer bg-green-600 py-2 text-[#F6ECC9] transition-colors hover:bg-green-700"
 				onclick={handleAddToCart}
 			>
 				Adicionar ao carrinho

@@ -52,10 +52,10 @@
 	}
 </script>
 
-<section class="bg-gray-50/70 py-10">
+<section class="py-10">
 	<!-- Header: título + setas de navegação -->
 	<div class="flex items-center justify-between px-6 pb-6 lg:px-15">
-		<h2 class="text-2xl font-bold">{titleCollection}</h2>
+		<h1>{titleCollection}</h1>
 		<div class="hidden gap-3 lg:flex">
 			<button
 				class="h-12 w-12 cursor-pointer rounded-full bg-white px-2 text-center shadow-md transition-colors hover:bg-gray-100"
