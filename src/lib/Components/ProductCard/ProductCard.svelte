@@ -1,62 +1,98 @@
-<script>
-    const {
-        sku= 'x',
-        images= [
-			{
-			 dir: '/images/products/colecao-1.webp',
-			 alt: ''
-			}
-			],
-        name= 'nome',
-        description= 'dddd',
-        variation= {
-            color: ['#dc2626', '#22c55e'],
-            size: ['P', 'M', 'G'],
-        },
-        price= {
-			value: 197.0,
-			discount: 0,
-			installment: 15.85
-		}
-    } = $props()
+<!--
+  ProductCard.svelte — Card de produto para o carrossel
+
+  Recebe o objeto `product` e seu `index` (posição no array do CMS).
+  O index é usado como identificador único para:
+  - Gerar a URL dinâmica (/product/{index})
+  - Identificar o produto no carrinho
+-->
+<script lang="ts">
+	import type { Product } from '$lib/types';
+	import { cart } from '$lib/store/cart.svelte';
+
+	// Props tipadas
+	interface Props {
+		product: Product; // dados do produto
+		index: number; // posição no array do CMS (identificador único)
+	}
+
+	const { product, index }: Props = $props();
+
+	/**
+	 * Adiciona o produto ao carrinho sem navegar para a página do produto.
+	 * - preventDefault: impede o link <a> de navegar
+	 * - stopPropagation: impede o evento de subir para o <a> pai
+	 */
+	function handleAddToCart(e: Event) {
+		e.preventDefault();
+		e.stopPropagation();
+		cart.addToCart(product, index);
+	}
 </script>
-  <div class="rounded-2xl overflow-hidden shadow-md">
-<div class="h-auto w-75 ">
-		{#each images as image}
-			<img src={image.dir} alt={image.alt} />
-		{/each}
-	</div>
-	<div class="space-y-2 bg-gray-100 p-2  ">
-        <span class="text-sm">{sku}</span>
-		<h2 class="text-xl font-bold">{name}</h2>
 
-		<div class="flex flex-col space-y-0">
-			<span class="text-2xl"
-				>{price.installment}
-			</span>
+<!-- Link para a página dinâmica do produto usando o índice -->
+<a href="/product/{index}" class="block">
+	<div class="h-[560px] w-75 overflow-hidden border-radius shadow-md">
+		<!-- Imagem principal do produto (primeira do array) -->
+		<div class="h-[350px]">
+			{#if product.images.length > 0}
+				{@const img = product.images[0]}
+				<picture>
+					{#if img.webp}<source srcset={img.webp} type="image/webp" />{/if}
+					{#if img.jpg}<source srcset={img.jpg} type="image/jpeg" />{/if}
+					{#if img.png}<source srcset={img.png} type="image/png" />{/if}
+					<img class="h-full w-full object-cover" src={img.dir} alt={img.alt} />
+				</picture>
+			{/if}
+		</div>
 
-			<span class="text-md"> ou R${price.value} á vista</span>
-		</div>
-		<div class=" flex items-center gap-3">
-			<p>Cores:</p>
-			{#each variation.color ?? [] as color}
-				<div class="h-4 w-4 rounded-full" style="background-color: {color}"></div>
-			{/each}
-		</div>
-		<div class=" flex items-center gap-3">
-			<p>Tamanhos:</p>
-			{#each variation.size ?? [] as size}
-				<p>
-					{size}
+		<!-- Informações do produto -->
+		<div class="space-y-2 bg-gray-100 p-3">
+			{#if product.sku}
+				<span class="text-sm text-gray-500">{product.sku}</span>
+			{/if}
+
+			<h2>{product.name}</h2>
+
+			<div class="flex flex-col">
+				<!-- <span class="text-2xl font-semibold">
+					{product.price.installment.toLocaleString('pt-BR', {
+						style: 'currency',
+						currency: 'BRL'
+					})}
+				</span> -->
+				<p class="text-md font-medium text-green-600">
+					{product.price.default.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} à vista
 				</p>
-			{/each}
+			</div>
+
+			{#if product.variation.color.length > 0}
+				<div class="flex items-center gap-2">
+					<p class="text-sm">Cores:</p>
+					{#each product.variation.color as color (color)}
+						<div
+							class="h-4 w-4 rounded-full border border-gray-300"
+							style="background-color: {color}"
+						></div>
+					{/each}
+				</div>
+			{/if}
+
+			{#if product.variation.size.length > 0}
+				<div class="flex items-center gap-2">
+					<p class="text-sm">Tamanhos:</p>
+					{#each product.variation.size as size (size)}
+						<span class="text-sm">{size}</span>
+					{/each}
+				</div>
+			{/if}
+
+			<button
+				class="w-full cursor-pointer bg-green-600 py-2 text-[#F6ECC9] transition-colors hover:bg-green-700"
+				onclick={handleAddToCart}
+			>
+				Adicionar ao carrinho
+			</button>
 		</div>
-
-		<button class=" w-full rounded-full bg-green-600 py-2 text-[#F6ECC9]"
-			>Adicionar ao carrinho
-		</button>
 	</div>
-
-  </div>
-	
-
+</a>
