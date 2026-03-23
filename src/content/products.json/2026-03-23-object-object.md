@@ -17,7 +17,11 @@
   },
   "variations": {
     "color": [
-      "preto"
+      "azul",
+      "preto",
+      "rosa",
+      "vermelho",
+      "verde"
     ]
   },
   "id": "e51ffa4c-aa76-4eb7-b530-533b800d7948"
