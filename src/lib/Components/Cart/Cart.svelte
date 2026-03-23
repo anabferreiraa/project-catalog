@@ -66,11 +66,17 @@
 				{#each cart.items as item (item.productIndex + '-' + (item.selectedColor ?? '') + '-' + (item.selectedSize ?? ''))}
 					<li class="flex gap-4 rounded-xl border border-gray-100 bg-gray-50 p-3">
 						{#if item.product.images.length > 0}
-							<img
-								class="h-20 w-20 shrink-0 rounded-lg object-cover"
-								src={item.product.images[0].dir}
-								alt={item.product.images[0].alt || item.product.name}
-							/>
+							{@const img = item.product.images[0]}
+							<picture>
+								{#if img.webp}<source srcset={img.webp} type="image/webp" />{/if}
+								{#if img.jpg}<source srcset={img.jpg} type="image/jpeg" />{/if}
+								{#if img.png}<source srcset={img.png} type="image/png" />{/if}
+								<img
+									class="h-20 w-20 shrink-0 rounded-lg object-cover"
+									src={img.dir}
+									alt={img.alt || item.product.name}
+								/>
+							</picture>
 						{/if}
 
 						<div class="flex flex-1 flex-col gap-1">

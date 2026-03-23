@@ -71,18 +71,23 @@
 			<!-- Imagem principal -->
 			{#if mainImage}
 				<div class="overflow-hidden rounded-2xl bg-gray-50">
-					<img
-						class="aspect-square w-full object-cover lg:max-h-[560px]"
-						src={mainImage.dir}
-						alt={mainImage.alt || product.name}
-					/>
+					<picture>
+						{#if mainImage.webp}<source srcset={mainImage.webp} type="image/webp" />{/if}
+						{#if mainImage.jpg}<source srcset={mainImage.jpg} type="image/jpeg" />{/if}
+						{#if mainImage.png}<source srcset={mainImage.png} type="image/png" />{/if}
+						<img
+							class="aspect-square w-full object-cover lg:max-h-[560px]"
+							src={mainImage.dir}
+							alt={mainImage.alt || product.name}
+						/>
+					</picture>
 				</div>
 			{/if}
 
 			<!-- Thumbnails / Mini slider -->
 			{#if product.images.length > 1}
 				<div class="flex gap-3 overflow-x-auto pb-2">
-					{#each product.images as { dir, alt }, i (i)}
+					{#each product.images as img, i (i)}
 						<button
 							class="h-20 w-20 flex-shrink-0 cursor-pointer overflow-hidden rounded-xl border-2 transition-all
 								{selectedImageIndex === i
@@ -91,11 +96,16 @@
 							onclick={() => (selectedImageIndex = i)}
 							aria-label="Ver imagem {i + 1}"
 						>
-							<img
-								class="h-full w-full object-cover"
-								src={dir}
-								alt={alt || `${product.name} - imagem ${i + 1}`}
-							/>
+							<picture>
+								{#if img.webp}<source srcset={img.webp} type="image/webp" />{/if}
+								{#if img.jpg}<source srcset={img.jpg} type="image/jpeg" />{/if}
+								{#if img.png}<source srcset={img.png} type="image/png" />{/if}
+								<img
+									class="h-full w-full object-cover"
+									src={img.dir}
+									alt={img.alt || `${product.name} - imagem ${i + 1}`}
+								/>
+							</picture>
 						</button>
 					{/each}
 				</div>

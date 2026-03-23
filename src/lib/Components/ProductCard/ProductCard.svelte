@@ -36,11 +36,17 @@
 		<!-- Imagem principal do produto (primeira do array) -->
 		<div class="h-auto">
 			{#if product.images.length > 0}
-				<img
-					class="h-auto w-full object-cover"
-					src={product.images[0].dir}
-					alt={product.images[0].alt}
-				/>
+				{@const img = product.images[0]}
+				<picture>
+					{#if img.webp}<source srcset={img.webp} type="image/webp" />{/if}
+					{#if img.jpg}<source srcset={img.jpg} type="image/jpeg" />{/if}
+					{#if img.png}<source srcset={img.png} type="image/png" />{/if}
+					<img
+						class="h-auto w-full object-cover"
+						src={img.dir}
+						alt={img.alt}
+					/>
+				</picture>
 			{/if}
 		</div>
 

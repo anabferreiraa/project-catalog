@@ -10,10 +10,20 @@
  * Isso evita problemas de IDs duplicados gerenciados manualmente.
  */
 
-/** Imagem do produto — cada produto pode ter múltiplas imagens */
+/**
+ * Imagem do produto — cada produto pode ter múltiplas imagens.
+ *
+ * Use os campos opcionais `webp`, `jpg` e `png` para fornecer fontes
+ * em diferentes formatos. O navegador escolhe a melhor opção via
+ * `<picture>` + `<source>`. O campo `dir` serve como fallback obrigatório
+ * (usado no `<img>` dentro do `<picture>`).
+ */
 export interface ProductImage {
-	dir: string; // caminho/URL da imagem
-	alt: string; // texto alternativo para acessibilidade
+	dir: string;   // caminho/URL de fallback da imagem (ex: .jpg ou .png)
+	alt: string;   // texto alternativo para acessibilidade
+	webp?: string; // caminho/URL em formato WebP
+	jpg?: string;  // caminho/URL em formato JPEG
+	png?: string;  // caminho/URL em formato PNG
 }
 
 /** Variações disponíveis do produto */

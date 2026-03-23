@@ -7,11 +7,17 @@
 			"images": [
 				{
 					"dir": "/images/products/colecao-1.webp",
-					"alt": ""
+					"alt": "",
+					"webp": "/images/products/colecao-1.webp",
+					"jpg": "/images/products/colecao-1.jpg",
+					"png": "/images/products/colecao-1.png"
 				},
 				{
 					"dir": "/images/products/colecao-1.webp",
-					"alt": ""
+					"alt": "",
+					"webp": "/images/products/colecao-1.webp",
+					"jpg": "/images/products/colecao-1.jpg",
+					"png": "/images/products/colecao-1.png"
 				}
 			],
 			"name": "nome do produto",
