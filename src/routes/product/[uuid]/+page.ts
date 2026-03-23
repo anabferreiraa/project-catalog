@@ -1,25 +1,27 @@
 /**
  * +page.ts — Loader da página dinâmica do produto
  *
- * SvelteKit chama esta função antes de renderizar a página /product/[uuid].
- * O parâmetro `uuid` da URL é usado para buscar o produto no JSON do CMS.
+ * O parâmetro `uuid` da URL é o ÍNDICE do produto no array do CMS.
+ * Exemplo: /product/0 → primeiro produto, /product/3 → quarto produto.
  *
- * Se o produto não for encontrado, retorna erro 404.
+ * Isso elimina a necessidade de IDs manuais no JSON do CMS.
  */
 import type { PageLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import exemploData from '$cms/exemplo.json';
 
 export const load: PageLoad = ({ params }) => {
-	// Busca o produto no array do CMS pelo campo `id`
-	// O `params.uuid` vem da URL: /product/[uuid]
-	const product = exemploData.products.find((p) => p.id === params.uuid);
+	// Converte o parâmetro da URL para número (índice do array)
+	const index = parseInt(params.uuid, 10);
 
-	// Se não encontrar o produto, retorna 404
-	if (!product) {
+	// Valida: deve ser um número válido e estar dentro do range do array
+	if (isNaN(index) || index < 0 || index >= exemploData.products.length) {
 		error(404, 'Produto não encontrado');
 	}
 
-	// Retorna o produto para ser usado no +page.svelte
-	return { product };
+	// Busca o produto pelo índice no array
+	const product = exemploData.products[index];
+
+	// Retorna o produto e o índice para uso no +page.svelte
+	return { product, productIndex: index };
 };

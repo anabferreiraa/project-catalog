@@ -4,6 +4,10 @@
  * Utiliza Svelte 5 runes ($state) no nível de módulo para criar
  * um estado reativo que pode ser importado em qualquer componente.
  *
+ * Identificação dos itens:
+ * Usa `productIndex` (posição no array do CMS) em vez de IDs manuais.
+ * Isso garante unicidade sem necessidade de gerenciamento manual.
+ *
  * Funcionalidades:
  * - Adicionar, remover e atualizar quantidade de itens
  * - Cálculo automático de total de itens e preço
@@ -22,7 +26,7 @@ const STORAGE_KEY = 'project-catalog-cart';
  * Retorna array vazio se estiver no servidor (SSR) ou se houver erro.
  */
 function loadFromStorage(): CartItem[] {
-	if (!browser) return []; // não executa no servidor
+	if (!browser) return [];
 	try {
 		const stored = localStorage.getItem(STORAGE_KEY);
 		return stored ? JSON.parse(stored) : [];
@@ -92,38 +96,38 @@ export const cart = {
 
 	/**
 	 * Adiciona um produto ao carrinho.
-	 * Se o mesmo produto (com mesma cor e tamanho) já existe, incrementa a quantidade.
-	 * Caso contrário, cria um novo item com quantidade 1.
+	 * Usa `productIndex` (posição no array do CMS) para identificar o produto.
+	 * Se o mesmo produto (com mesma variação) já existe, incrementa a quantidade.
 	 */
-	addToCart(product: Product, selectedColor?: string, selectedSize?: string) {
+	addToCart(product: Product, productIndex: number, selectedColor?: string, selectedSize?: string) {
 		// Busca se já existe esse produto com a mesma variação no carrinho
-		const existingIndex = items.findIndex(
+		const existingIdx = items.findIndex(
 			(item) =>
-				item.product.id === product.id &&
+				item.productIndex === productIndex &&
 				item.selectedColor === selectedColor &&
 				item.selectedSize === selectedSize
 		);
 
-		if (existingIndex >= 0) {
+		if (existingIdx >= 0) {
 			// Produto já existe → incrementa quantidade
-			items[existingIndex].quantity += 1;
+			items[existingIdx].quantity += 1;
 			items = [...items]; // força reatividade
 		} else {
 			// Produto novo → adiciona ao array
-			items = [...items, { product, quantity: 1, selectedColor, selectedSize }];
+			items = [...items, { product, productIndex, quantity: 1, selectedColor, selectedSize }];
 		}
 		saveToStorage(items);
 	},
 
 	/**
 	 * Remove um item específico do carrinho.
-	 * Identifica o item pelo ID do produto + variação selecionada.
+	 * Identifica o item pelo índice do produto + variação selecionada.
 	 */
-	removeFromCart(productId: string, selectedColor?: string, selectedSize?: string) {
+	removeFromCart(productIndex: number, selectedColor?: string, selectedSize?: string) {
 		items = items.filter(
 			(item) =>
 				!(
-					item.product.id === productId &&
+					item.productIndex === productIndex &&
 					item.selectedColor === selectedColor &&
 					item.selectedSize === selectedSize
 				)
@@ -135,14 +139,14 @@ export const cart = {
 	 * Atualiza a quantidade de um item no carrinho.
 	 * Se a quantidade for 0 ou menor, remove o item.
 	 */
-	updateQuantity(productId: string, quantity: number, selectedColor?: string, selectedSize?: string) {
+	updateQuantity(productIndex: number, quantity: number, selectedColor?: string, selectedSize?: string) {
 		if (quantity <= 0) {
-			this.removeFromCart(productId, selectedColor, selectedSize);
+			this.removeFromCart(productIndex, selectedColor, selectedSize);
 			return;
 		}
 		const index = items.findIndex(
 			(item) =>
-				item.product.id === productId &&
+				item.productIndex === productIndex &&
 				item.selectedColor === selectedColor &&
 				item.selectedSize === selectedSize
 		);

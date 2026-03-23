@@ -3,9 +3,12 @@
 	"nameCollection": "Coleção",
 	"products": [
 		{
-			"id": "prod-001",
 			"sku": "",
 			"images": [
+				{
+					"dir": "/images/products/colecao-1.webp",
+					"alt": ""
+				},
 				{
 					"dir": "/images/products/colecao-1.webp",
 					"alt": ""
@@ -14,8 +17,15 @@
 			"name": "nome do produto",
 			"description": "desciçao do produto",
 			"variation": {
-				"color": ["#dc2626", "#22c55e"],
-				"size": ["P", "M", "G"]
+				"color": [
+					"#dc2626",
+					"#22c55e"
+				],
+				"size": [
+					"P",
+					"M",
+					"G"
+				]
 			},
 			"price": {
 				"default": 197.0,
@@ -24,7 +34,6 @@
 			}
 		},
 		{
-			"id": "prod-002",
 			"sku": "",
 			"images": [
 				{
@@ -35,8 +44,15 @@
 			"name": "nome do produto",
 			"description": "desciçao do produto",
 			"variation": {
-				"color": ["#dc2626", "#22c55e"],
-				"size": ["P", "M", "G"]
+				"color": [
+					"#dc2626",
+					"#22c55e"
+				],
+				"size": [
+					"P",
+					"M",
+					"G"
+				]
 			},
 			"price": {
 				"default": 197.0,
@@ -45,7 +61,6 @@
 			}
 		},
 		{
-			"id": "prod-003",
 			"sku": "",
 			"images": [
 				{
@@ -56,8 +71,15 @@
 			"name": "nome do produto",
 			"description": "desciçao do produto",
 			"variation": {
-				"color": ["#dc2626", "#22c55e"],
-				"size": ["P", "M", "G"]
+				"color": [
+					"#dc2626",
+					"#22c55e"
+				],
+				"size": [
+					"P",
+					"M",
+					"G"
+				]
 			},
 			"price": {
 				"default": 197.0,
@@ -66,7 +88,6 @@
 			}
 		},
 		{
-			"id": "prod-004",
 			"sku": "",
 			"images": [
 				{
@@ -77,8 +98,15 @@
 			"name": "nome do produto",
 			"description": "desciçao do produto",
 			"variation": {
-				"color": ["#dc2626", "#22c55e"],
-				"size": ["P", "M", "G"]
+				"color": [
+					"#dc2626",
+					"#22c55e"
+				],
+				"size": [
+					"P",
+					"M",
+					"G"
+				]
 			},
 			"price": {
 				"default": 197.0,
@@ -87,7 +115,6 @@
 			}
 		},
 		{
-			"id": "prod-005",
 			"sku": "",
 			"images": [
 				{
@@ -98,8 +125,15 @@
 			"name": "nome do produto",
 			"description": "desciçao do produto",
 			"variation": {
-				"color": ["#dc2626", "#22c55e"],
-				"size": ["P", "M", "G"]
+				"color": [
+					"#dc2626",
+					"#22c55e"
+				],
+				"size": [
+					"P",
+					"M",
+					"G"
+				]
 			},
 			"price": {
 				"default": 197.0,
@@ -108,7 +142,6 @@
 			}
 		},
 		{
-			"id": "prod-006",
 			"sku": "",
 			"images": [
 				{
@@ -119,8 +152,15 @@
 			"name": "nome do produto",
 			"description": "desciçao do produto",
 			"variation": {
-				"color": ["#dc2626", "#22c55e"],
-				"size": ["P", "M", "G"]
+				"color": [
+					"#dc2626",
+					"#22c55e"
+				],
+				"size": [
+					"P",
+					"M",
+					"G"
+				]
 			},
 			"price": {
 				"default": 197.0,
@@ -129,7 +169,6 @@
 			}
 		},
 		{
-			"id": "prod-007",
 			"sku": "",
 			"images": [
 				{
@@ -140,8 +179,15 @@
 			"name": "nome do produto",
 			"description": "desciçao do produto",
 			"variation": {
-				"color": ["#dc2626", "#22c55e"],
-				"size": ["P", "M", "G"]
+				"color": [
+					"#dc2626",
+					"#22c55e"
+				],
+				"size": [
+					"P",
+					"M",
+					"G"
+				]
 			},
 			"price": {
 				"default": 197.0,

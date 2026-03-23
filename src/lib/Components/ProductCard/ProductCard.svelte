@@ -1,23 +1,22 @@
 <!--
   ProductCard.svelte — Card de produto para o carrossel
 
-  Recebe um objeto `product` completo (tipado com interface Product)
-  e exibe: imagem, nome, preço formatado em BRL, cores, tamanhos.
-
-  - O card inteiro é um link para a página do produto (/product/{id})
-  - O botão "Adicionar ao carrinho" intercepta o clique para não navegar
-  - Preços são formatados com toLocaleString para exibir em Real (R$)
+  Recebe o objeto `product` e seu `index` (posição no array do CMS).
+  O index é usado como identificador único para:
+  - Gerar a URL dinâmica (/product/{index})
+  - Identificar o produto no carrinho
 -->
 <script lang="ts">
 	import type { Product } from '$lib/types';
 	import { cart } from '$lib/store/cart.svelte';
 
-	// Props tipadas — recebe apenas o objeto completo do produto
+	// Props tipadas
 	interface Props {
-		product: Product;
+		product: Product; // dados do produto
+		index: number; // posição no array do CMS (identificador único)
 	}
 
-	const { product }: Props = $props();
+	const { product, index }: Props = $props();
 
 	/**
 	 * Adiciona o produto ao carrinho sem navegar para a página do produto.
@@ -27,12 +26,12 @@
 	function handleAddToCart(e: Event) {
 		e.preventDefault();
 		e.stopPropagation();
-		cart.addToCart(product);
+		cart.addToCart(product, index);
 	}
 </script>
 
-<!-- Link para a página dinâmica do produto usando o ID -->
-<a href="/product/{product.id}" class="block">
+<!-- Link para a página dinâmica do produto usando o índice -->
+<a href="/product/{index}" class="block">
 	<div class="rounded-2xl overflow-hidden shadow-md w-75">
 		<!-- Imagem principal do produto (primeira do array) -->
 		<div class="h-auto">
@@ -47,27 +46,21 @@
 
 		<!-- Informações do produto -->
 		<div class="space-y-2 bg-gray-100 p-3">
-			<!-- SKU (só exibe se tiver valor) -->
 			{#if product.sku}
 				<span class="text-sm text-gray-500">{product.sku}</span>
 			{/if}
 
-			<!-- Nome do produto -->
 			<h2 class="text-xl font-bold">{product.name}</h2>
 
-			<!-- Preços formatados em BRL -->
 			<div class="flex flex-col">
-				<!-- Valor da parcela -->
 				<span class="text-2xl font-semibold">
 					{product.price.installment.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
 				</span>
-				<!-- Preço à vista -->
 				<span class="text-sm text-gray-600">
 					ou {product.price.default.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} à vista
 				</span>
 			</div>
 
-			<!-- Bolinhas de cores disponíveis -->
 			{#if product.variation.color.length > 0}
 				<div class="flex items-center gap-2">
 					<p class="text-sm">Cores:</p>
@@ -80,7 +73,6 @@
 				</div>
 			{/if}
 
-			<!-- Tamanhos disponíveis -->
 			{#if product.variation.size.length > 0}
 				<div class="flex items-center gap-2">
 					<p class="text-sm">Tamanhos:</p>
@@ -90,7 +82,6 @@
 				</div>
 			{/if}
 
-			<!-- Botão de adicionar ao carrinho (intercepta clique do link) -->
 			<button
 				class="w-full cursor-pointer rounded-full bg-green-600 py-2 text-[#F6ECC9] transition-colors hover:bg-green-700"
 				onclick={handleAddToCart}
