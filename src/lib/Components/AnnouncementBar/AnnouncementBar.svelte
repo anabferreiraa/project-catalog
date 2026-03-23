@@ -28,7 +28,7 @@
 {#if active}
     <div
         class={cn(
-            'relative flex h-10 w-full items-center overflow-hidden bg-[#941711] text-[#F6ECC9] shadow-sm',
+            'relative flex h-10 w-full items-center overflow-hidden bg-[#941711] text-lusta-100 shadow-sm',
             className
         )}
     >

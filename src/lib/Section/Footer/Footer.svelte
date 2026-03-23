@@ -72,7 +72,7 @@
 	}: Props = $props();
 </script>
 
-<section>
+<section class="bg-white">
 	<div class="flex flex-col items-start gap-7 px-5 py-10 lg:flex-row lg:justify-between lg:px-20">
 		<div class="space-y-4">
 			<div class="h-auto w-47.5">

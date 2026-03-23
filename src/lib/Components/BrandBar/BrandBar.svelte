@@ -16,7 +16,7 @@
 	}: Props = $props();
 </script>
 
-<section>
+<section class="bg-white">
     <div class="w-full flex justify-center p-8">
          <img src="{images.name}" alt={images.alt}>
     </div>
