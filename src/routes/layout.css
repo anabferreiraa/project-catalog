@@ -30,12 +30,19 @@
 	--color-white: #ffffff;
 
 	/* zinc — / Primary accent */
-  --color-zinc-50: #f4f4f5;   
+    --color-zinc-50: #f4f4f5;   
 	--color-zinc-100: #f5f5f5;
 	--color-zinc-200: #e4e4e7;
 	--color-zinc-300: #d4d4d8;
 	--color-zinc-500: #71717a;
 	--color-zinc-950: #09090b;  
+
+	/* lusta — / sECUNDARIE text */
+   --color-lusta-50: #fcf9ee;
+   --color-lusta-100: #f6ecc9;
+   --color-lusta-200: #eedb99;
+   --color-lusta-950: #3c1c0c;
+
 
 
 	/* ── Border Radius ── */
@@ -65,7 +72,7 @@
 	}
 
 	body {
-		background-color: var(--color-zinc-50);
+		background-color: var( --color-zinc-100);
 		color: var(--color-zinc-950);
 		min-height: 100dvh;
 	}
@@ -75,6 +82,9 @@
 	}
 	h2 {
 		@apply text-base font-medium;
+	}
+	p {
+		@apply text-base;
 	}
 }
 

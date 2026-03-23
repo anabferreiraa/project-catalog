@@ -67,10 +67,10 @@
 
 	<div class="grid grid-cols-1 gap-8 px-6 lg:grid-cols-2 lg:px-15">
 		<!-- Galeria de imagens -->
-		<div class="flex flex-col gap-4">
+		<div class="flex flex-col gap-3">
 			<!-- Imagem principal -->
 			{#if mainImage}
-				<div class="overflow-hidden rounded-2xl bg-gray-50">
+				<div class="overflow-hidden border-radius">
 					<picture>
 						{#if mainImage.webp}<source srcset={mainImage.webp} type="image/webp" />{/if}
 						{#if mainImage.jpg}<source srcset={mainImage.jpg} type="image/jpeg" />{/if}
@@ -89,10 +89,10 @@
 				<div class="flex gap-3 overflow-x-auto pb-2">
 					{#each product.images as img, i (i)}
 						<button
-							class="h-20 w-20 flex-shrink-0 cursor-pointer overflow-hidden rounded-xl border-2 transition-all
+							class="h-20 w-20 flex-shrink-0 cursor-pointer overflow-hidden rounded-xl border transition-all
 								{selectedImageIndex === i
-								? 'border-gray-800 ring-2 ring-gray-800/20'
-								: 'border-gray-200 hover:border-gray-400'}"
+								? 'border-lusta-950 '
+								: 'border-lusta-100 hover:border-lusta-200'}"
 							onclick={() => (selectedImageIndex = i)}
 							aria-label="Ver imagem {i + 1}"
 						>
@@ -118,13 +118,13 @@
 				<span class="text-sm text-gray-500">SKU: {product.sku}</span>
 			{/if}
 
-			<h1 class="text-3xl font-bold">{product.name}</h1>
+			<h1>{product.name}</h1>
 			<p class="text-gray-600">{product.description}</p>
 
 			<!-- Preço -->
 			<div class="flex flex-col gap-1">
 				{#if product.price.discount > 0}
-					<span class="text-sm text-gray-400 line-through">
+					<span class=" text-gray-400 line-through">
 						{product.price.default.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
 					</span>
 				{/if}
@@ -175,7 +175,7 @@
 			{/if}
 
 			<button
-				class="w-full cursor-pointer rounded-full bg-green-600 py-3 text-lg font-semibold text-[#F6ECC9] transition-colors hover:bg-green-700"
+				class="w-full cursor-pointer rounded-full bg-green-600 py-3 text-lg font-semibold text-lusta-100 transition-colors hover:bg-green-700"
 				onclick={handleAddToCart}
 			>
 				Adicionar ao carrinho

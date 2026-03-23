@@ -47,7 +47,7 @@
 		</div>
 
 		<!-- Informações do produto -->
-		<div class="space-y-2 bg-gray-100 p-3">
+		<div class="space-y-3 bg-gray-100 p-3">
 			{#if product.sku}
 				<span class="text-sm text-gray-500">{product.sku}</span>
 			{/if}
@@ -80,19 +80,21 @@
 
 			{#if product.variation.size.length > 0}
 				<div class="flex items-center gap-2">
-					<p class="text-sm">Tamanhos:</p>
+					<p >Tamanhos:</p>
 					{#each product.variation.size as size (size)}
 						<span class="text-sm">{size}</span>
 					{/each}
 				</div>
 			{/if}
-
-			<button
-				class="w-full cursor-pointer bg-green-600 py-2 text-[#F6ECC9] transition-colors hover:bg-green-700"
+          
+               <button
+				class="w-full cursor-pointer border-radius bg-green-600 py-2 text-lusta-100 transition-colors hover:bg-green-700"
 				onclick={handleAddToCart}
 			>
 				Adicionar ao carrinho
 			</button>
+		 
+			
 		</div>
 	</div>
 </a>
